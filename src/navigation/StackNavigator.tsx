@@ -1,11 +1,17 @@
 import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
+import Home from '../screens/Home';
 
-export type RootStackParams = {};
+export type RootStackParams = {
+  Home: undefined;
+  Details: undefined;
+  Edit: undefined;
+  Add: undefined;
+};
 
 const Stack = createStackNavigator<RootStackParams>();
 
-export const StackNavigator = () => {
+const StackNavigator = () => {
   return (
     <Stack.Navigator
       screenOptions={{
@@ -17,11 +23,9 @@ export const StackNavigator = () => {
           backgroundColor: 'white',
         },
       }}>
-      {/* <Stack.Screen
-        name="InsectsScreen"
-        options={{ headerShown: false }}
-        component={InsectsScreen}
-      /> */}
+      <Stack.Screen name="Home" options={{ title: '' }} component={Home} />
     </Stack.Navigator>
   );
 };
+
+export default StackNavigator;

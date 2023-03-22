@@ -8,6 +8,8 @@ export const colores = {
   secondaryPurlple: '#E4A4FF',
   success: '#00ECA5',
   error: '#ED0039',
+  white: '#FFF',
+  black: '#000',
 };
 
 export const styles = StyleSheet.create({});
