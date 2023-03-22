@@ -7,21 +7,21 @@ export type Props = {
   name?: string;
   icon?: string;
   theme?: 'buttonPrimary' | 'buttonSecondary' | 'buttonIcon';
-  onpress?: () => void;
+  onPress: () => void;
   color?: string;
   size?: number;
 };
 const Button = ({
   name,
   theme = 'buttonPrimary',
-  onpress,
+  onPress,
   icon,
   color = '#000',
-  size = 18,
+  size = 20,
 }: Props) => {
   return (
     <View>
-      <TouchableOpacity onPress={onpress} activeOpacity={0.5}>
+      <TouchableOpacity onPress={onPress} activeOpacity={0.5}>
         <View
           style={
             theme === 'buttonPrimary'

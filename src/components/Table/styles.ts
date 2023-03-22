@@ -2,18 +2,12 @@ import { colores } from './../../theme/theme';
 import { StyleSheet } from 'react-native';
 
 export const styles = StyleSheet.create({
-  container: {
-    paddingHorizontal: 25,
-  },
-  containerButtons: {
-    flexDirection: 'row',
-    alignItems: 'center',
-  },
   tableHeader: {
     backgroundColor: colores.primaryPurple,
     borderTopStartRadius: 18,
     borderTopEndRadius: 18,
     borderColor: colores.primaryPurple,
+    columnGap: 20,
   },
   tableTitle: {
     color: colores.white,
@@ -27,5 +21,8 @@ export const styles = StyleSheet.create({
     borderTopEndRadius: 0,
     borderRadius: 18,
     borderColor: colores.primaryPurple,
+  },
+  cell: {
+    justifyContent: 'flex-end',
   },
 });
