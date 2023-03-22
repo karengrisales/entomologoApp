@@ -7,7 +7,7 @@ export const styles = StyleSheet.create({
     borderRadius: 18,
     borderColor: colores.primaryPurple,
     flexDirection: 'row',
-    marginVertical: 10,
+    justifyContent: 'space-between',
   },
   textArea: {
     width: 307,
@@ -23,6 +23,7 @@ export const styles = StyleSheet.create({
     width: 260,
     fontSize: 18,
     paddingHorizontal: 10,
+    height: 50,
   },
   containerIcon: {
     width: 50,

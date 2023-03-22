@@ -17,8 +17,8 @@ export const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: colores.primaryPurple,
-    width: 40,
-    height: 40,
+    width: 60,
+    height: 60,
     borderRadius: 100,
     margin: 5,
   },
@@ -28,5 +28,6 @@ export const styles = StyleSheet.create({
   title: {
     color: '#f8f6f6',
     fontWeight: 'bold',
+    fontSize: 30,
   },
 });
