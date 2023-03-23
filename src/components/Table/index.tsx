@@ -7,43 +7,27 @@ import { styles } from './styles';
 import { StackNavigationProp } from '@react-navigation/stack';
 import { RootStackParams } from '../../navigation/StackNavigator';
 import { useNavigation } from '@react-navigation/native';
-
-const names: string[] = ['Nombre', 'Lugar', 'Detalles', 'Editar'];
-const data: object[] = [
-  { name: 'Mariposa', location: 'Popayán' },
-  { name: 'Mariquita', location: 'Medellín' },
-  { name: 'Lombriz', location: 'Bógota' },
-  { name: 'Cucarrón', location: 'Cali' },
-  { name: 'Grillo', location: 'Cartagena' },
-  { name: 'Oruga', location: 'Barranquilla' },
-  { name: 'Mariposa', location: 'Popayán' },
-  { name: 'Mariquita', location: 'Medellín' },
-  { name: 'Lombriz', location: 'Bógota' },
-  { name: 'Cucarrón', location: 'Cali' },
-  { name: 'Grillo', location: 'Cartagena' },
-  { name: 'Oruga', location: 'Barranquilla' },
-  { name: 'Mariposa', location: 'Popayán' },
-  { name: 'Mariquita', location: 'Medellín' },
-  { name: 'Lombriz', location: 'Bógota' },
-  { name: 'Cucarrón', location: 'Cali' },
-  { name: 'Grillo', location: 'Cartagena' },
-  { name: 'Oruga', location: 'Barranquilla' },
-];
+import { TInsect } from '../../types/types';
 
 type ProfileScreenNavigationProp = StackNavigationProp<RootStackParams, 'Home'>;
 
-const Table = () => {
+interface TProps {
+  header: string[];
+  insect: TInsect[];
+}
+
+const Table = ({ insect, header }: TProps) => {
   const navigation = useNavigation<ProfileScreenNavigationProp>();
   const checkIndexIsEven = (n: number) => {
     return n % 2 === 0;
   };
   const checkIndexIsLast = (n: number) => {
-    return data.length - 1 === n;
+    return insect.length - 1 === n;
   };
   return (
     <DataTable>
       <DataTable.Header style={styles.tableHeader}>
-        {names.map((name: any, index: number) => {
+        {header.map((name: any, index: number) => {
           return (
             <DataTable.Title key={index}>
               <Text style={styles.tableTitle}>{name}</Text>
@@ -52,7 +36,7 @@ const Table = () => {
         })}
       </DataTable.Header>
       <View style={styles.rowContainer}>
-        {data?.map((dato: any, index: number) => {
+        {insect?.map((dato: TInsect, index: number) => {
           return (
             <DataTable.Row
               key={index}

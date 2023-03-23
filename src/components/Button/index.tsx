@@ -3,7 +3,7 @@ import Icon from 'react-native-vector-icons/Feather';
 import { View, Text, TouchableOpacity } from 'react-native';
 import { styles } from './styles';
 
-export type Props = {
+export type TProps = {
   name?: string;
   icon?: string;
   theme?: 'buttonPrimary' | 'buttonSecondary' | 'buttonIcon';
@@ -18,7 +18,7 @@ const Button = ({
   icon,
   color = '#000',
   size = 20,
-}: Props) => {
+}: TProps) => {
   return (
     <View>
       <TouchableOpacity onPress={onPress} activeOpacity={0.5}>
