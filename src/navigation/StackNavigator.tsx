@@ -35,7 +35,11 @@ const StackNavigator = () => {
         },
       }}>
       <Stack.Screen name="Home" options={{ title: '' }} component={Home} />
-      <Stack.Screen name="Add" options={{ title: '' }} component={Add} />
+      <Stack.Screen
+        name="Add"
+        options={{ title: 'Registrar' }}
+        component={Add}
+      />
       <Stack.Screen
         name="Edit"
         options={({ route }) => ({

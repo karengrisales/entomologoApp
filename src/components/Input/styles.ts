@@ -8,6 +8,7 @@ export const styles = StyleSheet.create({
     borderColor: colores.primaryPurple,
     flexDirection: 'row',
     justifyContent: 'space-between',
+    backgroundColor: colores.white,
   },
   textArea: {
     width: 307,
