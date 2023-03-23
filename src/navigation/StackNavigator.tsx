@@ -9,7 +9,7 @@ import { TInsect } from '../types/types';
 export type RootStackParams = {
   Home: undefined;
   Details: TInsect;
-  Edit: undefined;
+  Edit: TInsect;
   Add: undefined;
 };
 
@@ -29,7 +29,15 @@ const StackNavigator = () => {
       }}>
       <Stack.Screen name="Home" options={{ title: '' }} component={Home} />
       <Stack.Screen name="Add" options={{ title: '' }} component={Add} />
-      <Stack.Screen name="Edit" options={{ title: '' }} component={Edit} />
+      <Stack.Screen
+        name="Edit"
+        options={({ route }) => ({
+          title: route.params.name,
+          headerTitleStyle: { fontSize: 22 },
+          headerTitleAlign: 'center',
+        })}
+        component={Edit}
+      />
       <Stack.Screen
         name="Details"
         options={{ title: '' }}

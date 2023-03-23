@@ -68,7 +68,7 @@ const Table = ({ insect, header }: TProps) => {
                   icon={'edit-2'}
                   theme={'buttonIcon'}
                   color={colores.primaryPurple}
-                  onPress={() => navigation.navigate('Add')}
+                  onPress={() => navigation.navigate('Edit', insect[index])}
                 />
               </DataTable.Cell>
             </DataTable.Row>
