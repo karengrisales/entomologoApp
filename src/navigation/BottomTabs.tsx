@@ -9,21 +9,23 @@ const Tab = createBottomTabNavigator();
 
 const BottomTabs = () => {
   return (
-    <Tab.Navigator screenOptions={{ headerShown: false }}>
+    <Tab.Navigator
+      screenOptions={{
+        headerShown: false,
+        tabBarActiveTintColor: colores.primaryPurple,
+        tabBarInactiveTintColor: 'rgba(100, 41, 205, 0.5)',
+        tabBarStyle: {
+          elevation: 0,
+          shadowColor: 'transparent',
+          marginVertical: 10,
+        },
+        tabBarLabelStyle: {
+          fontSize: 15,
+        },
+      }}>
       <Tab.Screen
         name="StackNavigator"
         options={{
-          tabBarLabelStyle: {
-            fontSize: 20,
-            paddingBottom: 10,
-          },
-          tabBarStyle: {
-            height: 70,
-            borderTopWidth: 0,
-            elevation: 0,
-          },
-          tabBarActiveTintColor: colores.primaryPurple,
-          tabBarInactiveTintColor: 'rgba(100, 41, 205, 0.5)',
           title: 'Inicio',
           // eslint-disable-next-line react/no-unstable-nested-components
           tabBarIcon: ({ color }) => (
@@ -33,20 +35,8 @@ const BottomTabs = () => {
         component={StackNavigator}
       />
       <Tab.Screen
-        name="Analysis"
+        name="Análisis"
         options={{
-          title: 'Análisis',
-          tabBarLabelStyle: {
-            fontSize: 20,
-            paddingBottom: 10,
-          },
-          tabBarStyle: {
-            height: 70,
-            borderTopWidth: 0,
-            elevation: 0,
-          },
-          tabBarActiveTintColor: colores.primaryPurple,
-          tabBarInactiveTintColor: 'rgba(100, 41, 205, 0.5)',
           // eslint-disable-next-line react/no-unstable-nested-components
           tabBarIcon: ({ color }) => (
             <Icon name="bar-chart-2" size={28} color={color} />
