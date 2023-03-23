@@ -10,6 +10,7 @@ export type TProps = {
   onPress: () => void;
   color?: string;
   size?: number;
+  disabled?: boolean;
 };
 const Button = ({
   name,
@@ -18,18 +19,23 @@ const Button = ({
   icon,
   color = '#000',
   size = 20,
+  disabled,
 }: TProps) => {
   return (
     <View>
-      <TouchableOpacity onPress={onPress} activeOpacity={0.5}>
+      <TouchableOpacity
+        onPress={onPress}
+        activeOpacity={0.5}
+        disabled={disabled}>
         <View
-          style={
+          style={[
             theme === 'buttonPrimary'
               ? styles.buttonPrimary
               : theme === 'buttonSecondary'
               ? styles.buttonSecondary
-              : styles.buttonIcon
-          }>
+              : styles.buttonIcon,
+            disabled && styles.disabled,
+          ]}>
           {icon ? (
             <Icon name={icon} size={size} color={color} />
           ) : (

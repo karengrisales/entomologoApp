@@ -5,7 +5,7 @@ export const colores = {
   primaryIndigo: '#DFDFFF',
   secondaryFuchsia: '#E4A4FF',
   secondaryPurple: '#BB65FF',
-  success: '#00ECA5',
+  success: '#419B44',
   error: '#ED0039',
   white: '#FFF',
   black: '#000',
