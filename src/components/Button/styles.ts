@@ -8,7 +8,7 @@ export const styles = StyleSheet.create({
     alignItems: 'center',
     backgroundColor: colores.primaryPurple,
     width: 110,
-    height: 30,
+    height: 50,
     borderRadius: 30,
     margin: 5,
   },
@@ -28,6 +28,7 @@ export const styles = StyleSheet.create({
   titlePrimary: {
     color: '#f8f6f6',
     fontWeight: 'bold',
+    fontSize: 20,
   },
   titleSecondary: {
     color: '#f8f6f6',

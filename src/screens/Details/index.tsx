@@ -1,25 +1,14 @@
 import { StackScreenProps } from '@react-navigation/stack';
-import React, { useEffect } from 'react';
+import React from 'react';
 import { ImageBackground, ScrollView } from 'react-native';
 import { TextInformation } from '../../components/TextInformation';
 import { RootStackParams } from '../../navigation/StackNavigator';
-import { colores } from '../../theme/theme';
 import { styles } from './styles';
 
 interface IProps extends StackScreenProps<RootStackParams, 'Details'> {}
 
-const Details = ({ route, navigation }: IProps) => {
+const Details = ({ route }: IProps) => {
   const insect = route.params;
-
-  useEffect(() => {
-    navigation.setOptions({
-      headerBackTitleVisible: false,
-      headerTintColor: colores.primaryPurple,
-      headerTitleStyle: {
-        fontSize: 23,
-      },
-    });
-  });
 
   return (
     <ImageBackground
@@ -34,11 +23,13 @@ const Details = ({ route, navigation }: IProps) => {
         <TextInformation title="Ubicación:" information={insect.location} />
         <TextInformation
           title="Hábitat:"
-          information={insect.habitat || 'No se ha registrado hábitat'}
+          information={insect.habitat || 'No se ha registrado hábitat.'}
         />
         <TextInformation
-          title="Nota:"
-          information={insect.note || 'No se ha registrado nota'}
+          title="Observación:"
+          information={
+            insect.observation || 'No se ha registrado ninguna observación.'
+          }
         />
       </ScrollView>
     </ImageBackground>

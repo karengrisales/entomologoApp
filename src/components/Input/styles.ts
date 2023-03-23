@@ -11,13 +11,14 @@ export const styles = StyleSheet.create({
   },
   textArea: {
     width: 307,
-    height: 150,
+    height: 200,
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
     fontSize: 18,
     textAlignVertical: 'top',
-    paddingHorizontal: 10,
+    padding: 10,
+    margin: 10,
   },
   textInput: {
     width: 260,
