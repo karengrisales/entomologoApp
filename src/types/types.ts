@@ -5,3 +5,29 @@ export type TInsect = {
   observation?: string;
   habitat?: string;
 };
+
+export type TInsectsState = {
+  insects: TInsect[];
+};
+
+export type TSetInsect = {
+  type: 'SET_INSECT';
+  payload: TInsect;
+};
+
+export type TEditInsect = {
+  type: 'EDIT_INSECT';
+  payload: TInsect;
+};
+
+export type InsectsActionType = TSetInsect | TEditInsect;
+
+export type TActions = {
+  setInsect: (insect: TInsect) => void;
+  editInsect: (insect: TInsect) => void;
+};
+
+export type TInsectsContext = {
+  state: TInsectsState;
+  actions: TActions;
+};
