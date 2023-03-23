@@ -2,6 +2,9 @@ import { StyleSheet } from 'react-native';
 import { colores } from '../../theme/theme';
 
 export const styles = StyleSheet.create({
+  container: {
+    flexDirection: 'row',
+  },
   button: {
     backgroundColor: colores.white,
     borderColor: colores.primaryPurple,
@@ -11,7 +14,7 @@ export const styles = StyleSheet.create({
   },
   textButton: {
     color: colores.black,
-    fontSize: 22,
+    fontSize: 18,
     textAlign: 'left',
   },
   dropdown: {
@@ -20,7 +23,7 @@ export const styles = StyleSheet.create({
   },
   rowText: {
     color: colores.black,
-    fontSize: 20,
+    fontSize: 18,
     paddingLeft: 10,
     textAlign: 'left',
   },
