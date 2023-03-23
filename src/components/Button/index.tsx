@@ -33,7 +33,14 @@ const Button = ({
           {icon ? (
             <Icon name={icon} size={size} color={color} />
           ) : (
-            <Text style={styles.title}>{name}</Text>
+            <Text
+              style={
+                theme === 'buttonPrimary'
+                  ? styles.titlePrimary
+                  : styles.titleSecondary
+              }>
+              {name}
+            </Text>
           )}
         </View>
       </TouchableOpacity>

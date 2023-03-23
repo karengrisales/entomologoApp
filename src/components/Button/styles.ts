@@ -25,7 +25,11 @@ export const styles = StyleSheet.create({
   buttonIcon: {
     marginRight: 35,
   },
-  title: {
+  titlePrimary: {
+    color: '#f8f6f6',
+    fontWeight: 'bold',
+  },
+  titleSecondary: {
     color: '#f8f6f6',
     fontWeight: 'bold',
     fontSize: 30,

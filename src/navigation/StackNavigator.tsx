@@ -8,7 +8,7 @@ import { TInsect } from '../types/types';
 
 export type RootStackParams = {
   Home: undefined;
-  Details: undefined;
+  Details: TInsect;
   Edit: TInsect;
   Add: undefined;
 };
