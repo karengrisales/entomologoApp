@@ -35,4 +35,7 @@ export const styles = StyleSheet.create({
     fontWeight: 'bold',
     fontSize: 30,
   },
+  disabled: {
+    opacity: 0.4,
+  },
 });

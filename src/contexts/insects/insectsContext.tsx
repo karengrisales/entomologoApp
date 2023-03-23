@@ -12,7 +12,7 @@ export const InsectsContext = createContext<TInsectsContext | undefined>(
 );
 
 const initialState: TInsectsState = {
-  insects: [{ name: 'Mariposa', location: 'Popayan' }],
+  insects: [],
 };
 
 const reducer = (
@@ -23,21 +23,22 @@ const reducer = (
     case 'SET_INSECT':
       return {
         ...state,
-        insects: state.insects.filter(insect => {
-          if (insect.name.toUpperCase() !== action.payload.name.toUpperCase()) {
-            return [action.payload, ...state.insects];
-          }
-          return [...state.insects];
-        }),
+        insects: [action.payload, ...state.insects],
       };
     case 'EDIT_INSECT':
       return {
         ...state,
-        insects: state.insects.filter(insect => {
-          if (insect.name.toUpperCase() === action.payload.name.toUpperCase()) {
-            insect = action.payload;
-          }
-        }),
+        insects: state.insects.map(insect =>
+          insect.name === action.payload.name
+            ? {
+                ...insect,
+                location: action.payload.location,
+                quantity: action.payload.quantity,
+                observation: action.payload.observation,
+                habitat: action.payload.habitat,
+              }
+            : insect,
+        ),
       };
   }
 };
