@@ -30,6 +30,7 @@ const Input = ({
         onChangeText={onChangeInput}
         style={multiLine ? styles.textArea : styles.textInput}
         value={value}
+        cursorColor={colores.primaryPurple}
       />
       {icon && (
         <TouchableOpacity style={styles.containerIcon}>

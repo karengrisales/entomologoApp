@@ -2,6 +2,6 @@ export type TInsect = {
   name: string;
   location: string;
   quantity?: number;
-  note?: string;
+  observation?: string;
   habitat?: string;
 };

@@ -16,8 +16,10 @@ const Edit = () => {
   const route = useRoute<ProfileScreenRouteProp>();
   const [counter, setCounter] = useState(route.params.quantity || 0);
   const [location, setLocation] = useState(route.params.location);
-  const [observations, setObservations] = useState(route.params.note || '');
-  const [habitat, setHabitat] = useState(route.params.habitat || '');
+  const [observations, setObservations] = useState(
+    route.params.observation || '',
+  );
+  const [, setHabitat] = useState(route.params.habitat || '');
 
   return (
     <View style={stylesGlobal.containerGlobal}>

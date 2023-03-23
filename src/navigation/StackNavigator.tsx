@@ -5,6 +5,7 @@ import Add from '../screens/Add';
 import Edit from '../screens/Edit';
 import Details from '../screens/Details';
 import { TInsect } from '../types/types';
+import { colores } from '../theme/theme';
 
 export type RootStackParams = {
   Home: undefined;
@@ -19,6 +20,12 @@ const StackNavigator = () => {
   return (
     <Stack.Navigator
       screenOptions={{
+        headerBackTitleVisible: false,
+        headerTintColor: colores.primaryPurple,
+        headerTitleStyle: {
+          fontSize: 22,
+        },
+        headerTitleAlign: 'center',
         headerStyle: {
           elevation: 0,
           shadowColor: 'transparent',
@@ -33,8 +40,6 @@ const StackNavigator = () => {
         name="Edit"
         options={({ route }) => ({
           title: route.params.name,
-          headerTitleStyle: { fontSize: 22 },
-          headerTitleAlign: 'center',
         })}
         component={Edit}
       />
