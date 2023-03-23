@@ -8,6 +8,7 @@ import Input from '../../components/Input';
 import Table from '../../components/Table';
 import { RootStackParams } from '../../navigation/StackNavigator';
 import { stylesGlobal } from '../../theme/theme';
+import { TInsect } from '../../types/types';
 import { styles } from './styles';
 
 type ProfileScreenNavigationProp = StackNavigationProp<RootStackParams, 'Home'>;
@@ -15,6 +16,28 @@ type ProfileScreenNavigationProp = StackNavigationProp<RootStackParams, 'Home'>;
 const Home = () => {
   const navigation = useNavigation<ProfileScreenNavigationProp>();
   const [search, setSearch] = useState('');
+  const names: string[] = ['Nombre', 'Lugar', 'Detalles', 'Editar'];
+  const data: TInsect[] = [
+    { name: 'Mariposa', location: 'Popayán' },
+    { name: 'Mariquita', location: 'Medellín' },
+    { name: 'Lombriz', location: 'Bógota' },
+    { name: 'Cucarrón', location: 'Cali' },
+    { name: 'Grillo', location: 'Cartagena' },
+    { name: 'Oruga', location: 'Barranquilla' },
+    { name: 'Mariposa', location: 'Popayán' },
+    { name: 'Mariquita', location: 'Medellín' },
+    { name: 'Lombriz', location: 'Bógota' },
+    { name: 'Cucarrón', location: 'Cali' },
+    { name: 'Grillo', location: 'Cartagena' },
+    { name: 'Oruga', location: 'Barranquilla' },
+    { name: 'Mariposa', location: 'Popayán' },
+    { name: 'Mariquita', location: 'Medellín' },
+    { name: 'Lombriz', location: 'Bógota' },
+    { name: 'Cucarrón', location: 'Cali' },
+    { name: 'Grillo', location: 'Cartagena' },
+    { name: 'Oruga', location: 'Barranquilla' },
+  ];
+
   return (
     <View style={stylesGlobal.containerGlobal}>
       <Input
@@ -25,7 +48,7 @@ const Home = () => {
       />
       <ScrollView showsVerticalScrollIndicator={false}>
         <View style={styles.containerTable}>
-          <Table />
+          <Table insect={data} header={names} />
         </View>
       </ScrollView>
       <View style={styles.containerButton}>
