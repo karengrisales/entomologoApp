@@ -60,7 +60,7 @@ const Table = ({ insect, header }: TProps) => {
                   icon={'eye'}
                   theme={'buttonIcon'}
                   color={colores.primaryPurple}
-                  onPress={() => navigation.navigate('Details')}
+                  onPress={() => navigation.navigate('Details', dato)}
                 />
               </DataTable.Cell>
               <DataTable.Cell style={styles.cell}>

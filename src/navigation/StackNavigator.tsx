@@ -4,10 +4,11 @@ import Home from '../screens/Home';
 import Add from '../screens/Add';
 import Edit from '../screens/Edit';
 import Details from '../screens/Details';
+import { TInsect } from '../types/types';
 
 export type RootStackParams = {
   Home: undefined;
-  Details: undefined;
+  Details: TInsect;
   Edit: undefined;
   Add: undefined;
 };
