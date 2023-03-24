@@ -1,6 +1,6 @@
 import { NavigationContainer } from '@react-navigation/native';
 import React from 'react';
-import { InsectsProvider } from './src/contexts/insects/insectsContext';
+import { InsectsProvider } from './src/context/insects/insectsContext';
 import BottomTabs from './src/navigation/BottomTabs';
 
 export const App = () => {

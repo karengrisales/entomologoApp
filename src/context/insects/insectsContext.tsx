@@ -12,7 +12,29 @@ export const InsectsContext = createContext<TInsectsContext | undefined>(
 );
 
 const initialState: TInsectsState = {
-  insects: [],
+  insects: [
+    {
+      name: 'Mariposa',
+      location: 'Medellín',
+      habitat: 'Pantano',
+      quantity: 23,
+      observation: 'Mariposa del pantano',
+    },
+    {
+      name: 'Mariquita',
+      location: 'Cali',
+      habitat: 'Bosque',
+      quantity: 15,
+      observation: 'Mariquita del bosque',
+    },
+    {
+      name: 'Cucarrón',
+      location: 'Cali',
+      habitat: 'Bosque',
+      quantity: 14,
+      observation: 'Cucarrón del bosque',
+    },
+  ],
 };
 
 const reducer = (

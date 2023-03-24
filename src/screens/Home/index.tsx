@@ -6,7 +6,7 @@ import { ScrollView } from 'react-native-gesture-handler';
 import Button from '../../components/Button';
 import Input from '../../components/Input';
 import Table from '../../components/Table';
-import useInsects from '../../contexts/insects/useInsects';
+import useInsects from '../../context/insects/useInsects';
 import { RootStackParams } from '../../navigation/StackNavigator';
 import { stylesGlobal } from '../../theme/theme';
 import { styles } from './styles';
