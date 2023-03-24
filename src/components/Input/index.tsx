@@ -11,6 +11,7 @@ type TProps = {
   numberOfLines?: number;
   multiLine?: boolean;
   value: string;
+  onPress?: () => void;
 };
 
 const Input = ({
@@ -20,6 +21,7 @@ const Input = ({
   numberOfLines,
   multiLine = false,
   value,
+  onPress,
 }: TProps) => {
   return (
     <View style={styles.containerInput}>
@@ -33,7 +35,7 @@ const Input = ({
         cursorColor={colores.primaryPurple}
       />
       {icon && (
-        <TouchableOpacity style={styles.containerIcon}>
+        <TouchableOpacity style={styles.containerIcon} onPress={onPress}>
           <Icon
             name={icon}
             size={25}
