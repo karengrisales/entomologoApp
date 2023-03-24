@@ -9,9 +9,10 @@ type TProps = {
   data: string[];
   placeholder: string;
   onSelect: React.Dispatch<React.SetStateAction<string>>;
+  defaultValue?: string;
 };
 
-const Select = ({ data, placeholder, onSelect }: TProps) => {
+const Select = ({ data, placeholder, onSelect, defaultValue }: TProps) => {
   return (
     <View style={styles.container}>
       <SelectDropdown
@@ -29,6 +30,7 @@ const Select = ({ data, placeholder, onSelect }: TProps) => {
         buttonTextStyle={styles.textButton}
         dropdownStyle={styles.dropdown}
         rowTextStyle={styles.rowText}
+        defaultValue={defaultValue}
       />
     </View>
   );

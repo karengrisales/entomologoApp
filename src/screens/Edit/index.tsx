@@ -13,7 +13,13 @@ import { styles } from './styles';
 type ProfileScreenNavigationProp = StackNavigationProp<RootStackParams, 'Edit'>;
 type ProfileScreenRouteProp = RouteProp<RootStackParams, 'Edit'>;
 
-const HABITAT_DATA = ['Bosque', 'Océano', 'Desierto', 'Pantano', 'Montaña'];
+export const HABITAT_DATA = [
+  'Bosque',
+  'Océano',
+  'Desierto',
+  'Pantano',
+  'Montaña',
+];
 
 const Edit = () => {
   const navigation = useNavigation<ProfileScreenNavigationProp>();
@@ -63,6 +69,7 @@ const Edit = () => {
       />
       <View style={styles.select}>
         <Select
+          defaultValue={habitat}
           placeholder="Hábitat"
           data={HABITAT_DATA}
           onSelect={setHabitat}
