@@ -21,7 +21,7 @@ type TProps = {
     | undefined;
 };
 
-const Chart = ({
+const BarChartComponent = ({
   title,
   labels,
   data,
@@ -52,6 +52,9 @@ const Chart = ({
           chartConfig={{
             backgroundGradientFrom: backgroundGradientFrom,
             backgroundGradientTo: backgroundGradientTo,
+            decimalPlaces: 1,
+            fillShadowGradientOpacity: 1,
+            verticalLabelRotation: 30,
             color: barColor,
             labelColor: labelColor,
             style: {
@@ -64,4 +67,4 @@ const Chart = ({
   );
 };
 
-export default Chart;
+export default BarChartComponent;
