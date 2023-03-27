@@ -5,13 +5,17 @@ import { styles } from './styles';
 export type TProps = {
   title: string;
   information: string;
+  size?: number;
 };
 
-export const TextInformation = ({ title, information }: TProps) => {
+export const TextInformation = ({ title, information, size = 25 }: TProps) => {
   return (
-    <View style={styles.container}>
-      <Text style={styles.text}>
-        {title} <Text style={styles.information}>{information}</Text>
+    <View>
+      <Text style={[styles.text, { fontSize: size }]}>
+        {title}{' '}
+        <Text style={[styles.information, { fontSize: size }]}>
+          {information}
+        </Text>
       </Text>
     </View>
   );

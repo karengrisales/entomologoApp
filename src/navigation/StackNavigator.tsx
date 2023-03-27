@@ -34,7 +34,11 @@ const StackNavigator = () => {
           backgroundColor: 'white',
         },
       }}>
-      <Stack.Screen name="Home" options={{ title: '' }} component={Home} />
+      <Stack.Screen
+        name="Home"
+        options={{ title: '', headerShown: false }}
+        component={Home}
+      />
       <Stack.Screen
         name="Add"
         options={{ title: 'Registrar' }}

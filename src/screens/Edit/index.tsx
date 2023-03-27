@@ -5,7 +5,10 @@ import { Text, View } from 'react-native';
 import Button from '../../components/Button';
 import Input from '../../components/Input';
 import Select from '../../components/Select';
-import useInsects from '../../context/insects/useInsects';
+import { TextInformation } from '../../components/TextInformation';
+import useInsects from '../../contexts/insects/useInsects';
+import useLocation from '../../contexts/location/useLocation';
+import { useLocationReverse } from '../../hooks/useLocationReverse';
 import { RootStackParams } from '../../navigation/StackNavigator';
 import { stylesGlobal } from '../../theme/theme';
 import { styles } from './styles';
@@ -27,20 +30,24 @@ const Edit = () => {
   const {
     actions: { editInsect },
   } = useInsects();
+  const { state: stateLocation } = useLocation();
   const [counter, setCounter] = useState(route.params.quantity || 0);
-  const [location, setLocation] = useState(route.params.location);
   const [observation, setObservation] = useState(
     route.params.observation || '',
   );
   const [habitat, setHabitat] = useState(route.params.habitat || '');
+  const { results } = useLocationReverse(
+    stateLocation.position.coords.latitude,
+    stateLocation.position.coords.longitude,
+  );
 
   const handleSubmit = () => {
     editInsect({
       name: route.params.name,
-      location,
       quantity: counter,
       observation,
       habitat,
+      location: results[0]?.city,
     });
     navigation.goBack();
   };
@@ -62,10 +69,10 @@ const Edit = () => {
           onPress={() => setCounter(prevState => prevState + 1)}
         />
       </View>
-      <Input
-        placeholder="Ubicación"
-        value={location}
-        onChangeInput={setLocation}
+      <TextInformation
+        title="Ubicación:"
+        information={results[0]?.city}
+        size={20}
       />
       <View style={styles.select}>
         <Select
@@ -83,11 +90,7 @@ const Edit = () => {
         numberOfLines={6}
       />
       <View style={styles.save}>
-        <Button
-          name="Guardar"
-          onPress={handleSubmit}
-          disabled={location ? false : true}
-        />
+        <Button name="Guardar" onPress={handleSubmit} />
       </View>
     </View>
   );

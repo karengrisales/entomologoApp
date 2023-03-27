@@ -2,6 +2,9 @@ import { StyleSheet } from 'react-native';
 import { colores } from '../../theme/theme';
 
 export const styles = StyleSheet.create({
+  input: {
+    marginTop: 80,
+  },
   containerButton: {
     position: 'absolute',
     bottom: 20,

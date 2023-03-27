@@ -12,7 +12,7 @@ import {
   labelsName,
   labelsQuantity,
 } from '../../utils/utils';
-import useInsects from '../../context/insects/useInsects';
+import useInsects from '../../contexts/insects/useInsects';
 import { HABITAT_DATA } from '../Edit';
 import PieChartComponent from '../../components/PieChart';
 
