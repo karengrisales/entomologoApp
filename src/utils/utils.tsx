@@ -1,5 +1,5 @@
 import { Dimensions } from 'react-native';
-import { TInsectsState } from '../types/types';
+import { TInsectsState, TPieChart } from '../types/types';
 
 const windowWidth = Dimensions.get('window').width;
 
@@ -62,4 +62,29 @@ export const labelsHabitat = (state: TInsectsState) => {
   });
   labels = [...labels, bosque, oceano, desierto, pantano, montana];
   return labels;
+};
+
+const getRandomColor = () => {
+  var letters = '0123456789ABCDEF';
+  var color = '#';
+  for (var i = 0; i < 6; i++) {
+    color += letters[Math.floor(Math.random() * 16)];
+  }
+  return color;
+};
+
+export const generateDataPie = (state: TInsectsState) => {
+  let data: TPieChart[] = [];
+  state.insects.map(insect => {
+    data = [
+      ...data,
+      {
+        name: insect.name,
+        quantity: insect.quantity || 0,
+        color: getRandomColor(),
+        legendFontSize: 15,
+      },
+    ];
+  });
+  return data;
 };

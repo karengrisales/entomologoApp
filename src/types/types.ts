@@ -31,3 +31,11 @@ export type TInsectsContext = {
   state: TInsectsState;
   actions: TActions;
 };
+
+export type TPieChart = {
+  name: string;
+  quantity: number;
+  color?: string;
+  legendFontColor?: string;
+  legendFontSize?: number;
+};
