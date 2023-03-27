@@ -6,7 +6,7 @@ import { ScrollView } from 'react-native-gesture-handler';
 import Button from '../../components/Button';
 import Input from '../../components/Input';
 import Table from '../../components/Table';
-import useInsects from '../../context/insects/useInsects';
+import useInsects from '../../contexts/insects/useInsects';
 import { RootStackParams } from '../../navigation/StackNavigator';
 import { stylesGlobal } from '../../theme/theme';
 import { styles } from './styles';
@@ -51,13 +51,15 @@ const Home = () => {
 
   return (
     <View style={stylesGlobal.containerGlobal}>
-      <Input
-        placeholder="Buscar insecto"
-        icon={'search'}
-        onChangeInput={setSearch}
-        value={search}
-        onPress={filterInsects}
-      />
+      <View style={styles.input}>
+        <Input
+          placeholder="Buscar insecto"
+          icon={'search'}
+          onChangeInput={setSearch}
+          value={search}
+          onPress={filterInsects}
+        />
+      </View>
       {!isMatch && filter.length === 0 && (
         <Text style={styles.emptyState}>
           No hubo resultados de tu búsqueda, intenta con otra especie de

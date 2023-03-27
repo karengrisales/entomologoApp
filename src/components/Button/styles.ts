@@ -7,10 +7,11 @@ export const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: colores.primaryPurple,
-    width: 110,
+    minWidth: 110,
     height: 50,
     borderRadius: 30,
     margin: 5,
+    padding: 13,
   },
   buttonSecondary: {
     display: 'flex',
@@ -28,7 +29,7 @@ export const styles = StyleSheet.create({
   titlePrimary: {
     color: '#f8f6f6',
     fontWeight: 'bold',
-    fontSize: 20,
+    fontSize: 18,
   },
   titleSecondary: {
     color: '#f8f6f6',
