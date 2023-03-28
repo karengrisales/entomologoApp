@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
+import SplashScreen from 'react-native-splash-screen';
 import Geolocation from 'react-native-geolocation-service';
 import {
   ImageBackground,
@@ -84,6 +85,7 @@ const Location = () => {
         navigate.navigate('BottomTabs');
       }
     } else {
+      SplashScreen.hide();
       firstRender.current = true;
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
