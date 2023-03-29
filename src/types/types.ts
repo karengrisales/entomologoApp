@@ -4,6 +4,8 @@ export type TInsect = {
   quantity?: number;
   observation?: string;
   habitat?: string;
+  image?: string;
+  fecha?: string;
 };
 
 export type TInsectsState = {

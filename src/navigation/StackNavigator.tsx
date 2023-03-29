@@ -25,6 +25,7 @@ const StackNavigator = () => {
         headerTitleStyle: {
           fontSize: 22,
         },
+        headerShown: false,
         headerTitleAlign: 'center',
         headerStyle: {
           elevation: 0,
