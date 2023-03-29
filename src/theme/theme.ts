@@ -11,6 +11,15 @@ export const colores = {
   black: '#000',
 };
 
+export const colors = {
+  primaryGreen: '#D3E8D2',
+  secondaryGreen: '#006D31',
+  tertiaryGreen: '#006D31',
+  primaryBlue: '#BDEAF4',
+  primaryWhite: '#FCFDF7',
+  primaryGrey: '#74777580',
+};
+
 export const size = {
   borderRadius: 18,
   borderZero: 0,
