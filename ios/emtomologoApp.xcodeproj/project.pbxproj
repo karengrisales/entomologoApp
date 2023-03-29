@@ -7,8 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		00101F9F29D3370600C23D6A /* SplashScreen.png in Resources */ = {isa = PBXBuildFile; fileRef = 00101F9E29D3370600C23D6A /* SplashScreen.png */; };
-		00101FA129D3387000C23D6A /* Splash.png in Resources */ = {isa = PBXBuildFile; fileRef = 00101FA029D3387000C23D6A /* Splash.png */; };
+		0057D33F29D48F4100491815 /* splash.png in Resources */ = {isa = PBXBuildFile; fileRef = 0057D33E29D48F4100491815 /* splash.png */; };
 		0063D45029D21754003E55E2 /* GeoLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0063D44F29D21754003E55E2 /* GeoLocation.swift */; };
 		00E356F31AD99517003FC87E /* emtomologoAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* emtomologoAppTests.m */; };
 		0C80B921A6F3F58F76C31292 /* libPods-emtomologoApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DCACB8F33CDC322A6C60F78 /* libPods-emtomologoApp.a */; };
@@ -30,8 +29,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		00101F9E29D3370600C23D6A /* SplashScreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SplashScreen.png; sourceTree = "<group>"; };
-		00101FA029D3387000C23D6A /* Splash.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Splash.png; sourceTree = "<group>"; };
+		0057D33E29D48F4100491815 /* splash.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = splash.png; sourceTree = "<group>"; };
 		0063D44E29D21754003E55E2 /* emtomologoApp-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "emtomologoApp-Bridging-Header.h"; sourceTree = "<group>"; };
 		0063D44F29D21754003E55E2 /* GeoLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeoLocation.swift; sourceTree = "<group>"; };
 		00DE20D229CB4F0B00243582 /* Feather.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Feather.ttf; path = "../../node_modules/react-native-vector-icons/Fonts/Feather.ttf"; sourceTree = "<group>"; };
@@ -104,8 +102,7 @@
 		13B07FAE1A68108700A75B9A /* emtomologoApp */ = {
 			isa = PBXGroup;
 			children = (
-				00101FA029D3387000C23D6A /* Splash.png */,
-				00101F9E29D3370600C23D6A /* SplashScreen.png */,
+				0057D33E29D48F4100491815 /* splash.png */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.mm */,
 				13B07FB51A68108700A75B9A /* Images.xcassets */,
@@ -265,9 +262,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				00101FA129D3387000C23D6A /* Splash.png in Resources */,
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
-				00101F9F29D3370600C23D6A /* SplashScreen.png in Resources */,
+				0057D33F29D48F4100491815 /* splash.png in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
