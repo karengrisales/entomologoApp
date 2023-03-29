@@ -1,5 +1,4 @@
 import React from 'react';
-import Icon from 'react-native-vector-icons/Feather';
 import { View, Text, TouchableOpacity } from 'react-native';
 import { styles } from './styles';
 
@@ -41,9 +40,6 @@ const Button = ({
   name,
   theme = 'primaryButton',
   onPress,
-  icon,
-  color = '#000',
-  size = 20,
   disabled,
 }: TProps) => {
   const button = stylesButton[theme];
@@ -55,11 +51,7 @@ const Button = ({
         activeOpacity={0.5}
         disabled={disabled}>
         <View style={button}>
-          {icon ? (
-            <Icon name={icon} size={size} color={color} />
-          ) : (
-            <Text style={title}>{name}</Text>
-          )}
+          <Text style={title}>{name}</Text>
         </View>
       </TouchableOpacity>
     </View>
