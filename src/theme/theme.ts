@@ -18,6 +18,7 @@ export const colors = {
   primaryBlue: '#BDEAF4',
   primaryWhite: '#FCFDF7',
   primaryGrey: '#747775',
+  secondaryGrey: '#414941',
   primaryBlack: '#0E1F11',
 };
 
