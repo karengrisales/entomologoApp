@@ -78,7 +78,7 @@ const Home = () => {
       )}
       <View style={styles.containerButton}>
         <Button
-          theme="buttonSecondary"
+          theme="smallPrimaryButton"
           name={'+'}
           onPress={() => navigation.navigate('Add')}
         />
