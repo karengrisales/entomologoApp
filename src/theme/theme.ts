@@ -14,7 +14,7 @@ export const colores = {
 export const colors = {
   primaryGreen: '#D3E8D2',
   secondaryGreen: '#006D31',
-  tertiaryGreen: '#006D31',
+  tertiaryGreen: '#8FF9A4',
   primaryBlue: '#BDEAF4',
   primaryWhite: '#FCFDF7',
   secondaryWhite: '#DDE5DA',
