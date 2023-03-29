@@ -76,7 +76,6 @@ const Location = () => {
       { enableHighAccuracy: true, timeout: 20000, maximumAge: 10000 },
     );
   }
-  console.log(location);
 
   useEffect(() => {
     if (firstRender.current) {

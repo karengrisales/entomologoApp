@@ -1,7 +1,7 @@
 import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
 import Location from '../screens/Location';
-import BottomTabs from './BottomTabs';
+import StackNavigator from './StackNavigator';
 
 export type RootStackParams = {
   BottomTabs: undefined;
@@ -24,7 +24,7 @@ const StackNavigatorInitial = () => {
       <Stack.Screen
         name="BottomTabs"
         options={{ title: '' }}
-        component={BottomTabs}
+        component={StackNavigator}
       />
     </Stack.Navigator>
   );

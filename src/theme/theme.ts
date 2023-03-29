@@ -31,6 +31,5 @@ export const stylesGlobal = StyleSheet.create({
   containerGlobal: {
     flex: 1,
     marginHorizontal: 40,
-    backgroundColor: colors.primaryWhite,
   },
 });
