@@ -17,9 +17,13 @@ export const colors = {
   tertiaryGreen: '#006D31',
   primaryBlue: '#BDEAF4',
   primaryWhite: '#FCFDF7',
+  secondaryWhite: '#DDE5DA',
   primaryGrey: '#747775',
   secondaryGrey: '#414941',
+  tertiaryGrey: '#727970',
+  quaternaryGrey: '#1A1C19',
   primaryBlack: '#0E1F11',
+  secondaryBlack: '#414941',
 };
 
 export const size = {
@@ -30,6 +34,6 @@ export const size = {
 export const stylesGlobal = StyleSheet.create({
   containerGlobal: {
     flex: 1,
-    marginHorizontal: 40,
+    marginHorizontal: 26,
   },
 });
