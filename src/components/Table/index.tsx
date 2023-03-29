@@ -57,16 +57,12 @@ const Table = ({ insect, header }: TProps) => {
               <DataTable.Cell>{dato.location}</DataTable.Cell>
               <DataTable.Cell style={styles.cell}>
                 <Button
-                  icon={'eye'}
-                  theme={'buttonIcon'}
                   color={colores.primaryPurple}
                   onPress={() => navigation.navigate('Details', dato)}
                 />
               </DataTable.Cell>
               <DataTable.Cell style={styles.cell}>
                 <Button
-                  icon={'edit-2'}
-                  theme={'buttonIcon'}
                   color={colores.primaryPurple}
                   onPress={() => navigation.navigate('Edit', insect[index])}
                 />
