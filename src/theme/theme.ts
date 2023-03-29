@@ -5,10 +5,21 @@ export const colores = {
   primaryIndigo: '#DFDFFF',
   secondaryFuchsia: '#E4A4FF',
   secondaryPurple: '#BB65FF',
-  success: '#00ECA5',
+  success: '#419B44',
   error: '#ED0039',
   white: '#FFF',
   black: '#000',
+};
+
+export const colors = {
+  primaryGreen: '#D3E8D2',
+  secondaryGreen: '#006D31',
+  tertiaryGreen: '#006D31',
+  primaryBlue: '#BDEAF4',
+  primaryWhite: '#FCFDF7',
+  primaryGrey: '#747775',
+  secondaryGrey: '#414941',
+  primaryBlack: '#0E1F11',
 };
 
 export const size = {

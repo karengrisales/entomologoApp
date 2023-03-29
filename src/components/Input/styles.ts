@@ -1,36 +1,33 @@
 import { StyleSheet } from 'react-native';
-import { colores } from '../../theme/theme';
+import { colores, colors } from '../../theme/theme';
 
 export const styles = StyleSheet.create({
+  label: {
+    fontSize: 16,
+    color: colores.black,
+    paddingLeft: 30,
+    marginBottom: 5,
+  },
   containerInput: {
-    borderWidth: 2,
-    borderRadius: 18,
-    borderColor: colores.primaryPurple,
-    flexDirection: 'row',
-    justifyContent: 'space-between',
+    borderRadius: 28,
+    backgroundColor: colors.primaryWhite,
   },
   textArea: {
-    width: 307,
-    height: 150,
+    height: 200,
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
-    fontSize: 18,
+    fontSize: 16,
     textAlignVertical: 'top',
-    paddingHorizontal: 10,
+    paddingVertical: 10,
+    paddingHorizontal: 40,
+    margin: 10,
+    color: colors.secondaryGrey,
   },
   textInput: {
-    width: 260,
-    fontSize: 18,
-    paddingHorizontal: 10,
+    fontSize: 16,
+    paddingLeft: 40,
     height: 50,
-  },
-  containerIcon: {
-    width: 50,
-    borderRadius: 18,
-    justifyContent: 'center',
-  },
-  icon: {
-    alignSelf: 'center',
+    color: colors.secondaryGrey,
   },
 });
