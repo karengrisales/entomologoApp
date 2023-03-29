@@ -13,7 +13,7 @@ const ImageComponent = ({ theme, width, height }: TProps) => {
   return (
     <View
       style={[theme === 'imageCircle' && styles.imageCirle, { width, height }]}>
-      <View style={[styles.containerImage]}>
+      <View style={styles.containerImage}>
         <Image
           source={require('../../assets/Abeja.png')}
           style={
