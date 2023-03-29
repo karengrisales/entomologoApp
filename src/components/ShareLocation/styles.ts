@@ -3,7 +3,6 @@ import { colors } from '../../theme/theme';
 
 export const styles = StyleSheet.create({
   container: {
-    marginTop: 20,
     flexDirection: 'row',
     backgroundColor: colors.primaryWhite,
     columnGap: 16,
