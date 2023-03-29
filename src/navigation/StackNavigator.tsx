@@ -5,7 +5,7 @@ import Add from '../screens/Add';
 import Edit from '../screens/Edit';
 import Details from '../screens/Details';
 import { TInsect } from '../types/types';
-import { colores } from '../theme/theme';
+import { colores, colors } from '../theme/theme';
 
 export type RootStackParams = {
   Home: undefined;
@@ -31,7 +31,7 @@ const StackNavigator = () => {
           shadowColor: 'transparent',
         },
         cardStyle: {
-          backgroundColor: 'white',
+          backgroundColor: colors.primaryGreen,
         },
       }}>
       <Stack.Screen
