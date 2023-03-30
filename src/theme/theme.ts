@@ -15,6 +15,8 @@ export const colors = {
   primaryGreen: '#D3E8D2',
   secondaryGreen: '#006D31',
   tertiaryGreen: '#8FF9A4',
+  quaternaryGreen: '#E0EDE1',
+  quinaryGreen: '#00210A',
   primaryBlue: '#BDEAF4',
   primaryWhite: '#FCFDF7',
   secondaryWhite: '#DDE5DA',
@@ -22,6 +24,7 @@ export const colors = {
   secondaryGrey: '#414941',
   tertiaryGrey: '#727970',
   quaternaryGrey: '#1A1C19',
+  quinaryGrey: '#C1C9BE',
   primaryBlack: '#0E1F11',
   secondaryBlack: '#414941',
 };

@@ -4,7 +4,6 @@ import { StyleSheet } from 'react-native';
 export const styles = StyleSheet.create({
   imageCircleBorder: {
     borderWidth: 3,
-    padding: 30,
     borderRadius: 100,
     borderColor: colors.tertiaryGreen,
     justifyContent: 'center',
