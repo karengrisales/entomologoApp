@@ -4,7 +4,7 @@ import { View } from 'react-native';
 import { styles } from './styles';
 
 type TProps = {
-  theme?: 'imageCircle';
+  theme?: 'imageCircle' | 'imageCircleBorder';
   width: number;
   height: number;
 };
@@ -12,18 +12,22 @@ type TProps = {
 const ImageComponent = ({ theme, width, height }: TProps) => {
   return (
     <View
-      style={[theme === 'imageCircle' && styles.imageCirle, { width, height }]}>
-      <View style={styles.containerImage}>
+      style={[
+        theme === 'imageCircleBorder' && styles.imageCircleBorder,
+        { width, height },
+      ]}>
+      <View style={[styles.containerImage]}>
         <Image
           source={require('../../assets/Abeja.png')}
-          style={
-            theme === 'imageCircle'
+          style={[
+            styles.image,
+            theme === 'imageCircleBorder'
               ? {
                   width: width - 10,
                   height: height - 10,
                 }
-              : { width, height }
-          }
+              : { width, height },
+          ]}
         />
       </View>
     </View>

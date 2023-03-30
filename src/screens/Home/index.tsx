@@ -80,7 +80,7 @@ const Home = () => {
         <Button
           theme="smallPrimaryButton"
           name={'+'}
-          onPress={() => navigation.navigate('Add')}
+          onPress={() => navigation.navigate('AddInsect')}
         />
       </View>
     </View>

@@ -1,17 +1,17 @@
 import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
 import Home from '../screens/Home';
-import Add from '../screens/Add';
 import Edit from '../screens/Edit';
 import Details from '../screens/Details';
 import { TInsect } from '../types/types';
 import { colores, colors } from '../theme/theme';
+import AddInsect from '../screens/AddInsect';
 
 export type RootStackParams = {
   Home: undefined;
   Details: TInsect;
   Edit: TInsect;
-  Add: undefined;
+  AddInsect: undefined;
 };
 
 const Stack = createStackNavigator<RootStackParams>();
@@ -41,9 +41,9 @@ const StackNavigator = () => {
         component={Home}
       />
       <Stack.Screen
-        name="Add"
+        name="AddInsect"
         options={{ title: 'Registrar' }}
-        component={Add}
+        component={AddInsect}
       />
       <Stack.Screen
         name="Edit"
