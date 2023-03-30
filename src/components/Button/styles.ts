@@ -2,16 +2,18 @@ import { colors } from './../../theme/theme';
 import { StyleSheet } from 'react-native';
 
 export const styles = StyleSheet.create({
-  primaryButton: {
+  button: {
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: colors.primaryWhite,
     minWidth: 110,
     height: 50,
     borderRadius: 30,
     margin: 5,
-    padding: 13,
+    paddingHorizontal: 13,
+  },
+  primaryButton: {
+    backgroundColor: colors.primaryWhite,
     shadowColor: '#000',
     shadowOffset: {
       width: 0,
@@ -23,76 +25,49 @@ export const styles = StyleSheet.create({
     elevation: 5,
   },
   secondaryButton: {
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
     backgroundColor: colors.primaryGreen,
-    minWidth: 110,
-    height: 50,
-    borderRadius: 30,
-    margin: 5,
-    padding: 13,
     borderWidth: 2,
     borderColor: colors.primaryGrey,
   },
   tertiaryButton: {
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
     backgroundColor: colors.primaryWhite,
-    minWidth: 110,
-    height: 50,
-    borderRadius: 30,
-    margin: 5,
-    padding: 13,
     borderWidth: 2,
     borderColor: colors.primaryGrey,
   },
   quaternaryButton: {
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
     backgroundColor: colors.secondaryGreen,
-    minWidth: 110,
-    height: 50,
-    borderRadius: 30,
-    margin: 5,
-    padding: 13,
     borderWidth: 2,
     borderColor: colors.primaryGrey,
   },
-  smallPrimaryButton: {
-    backgroundColor: colors.primaryGreen,
+  smallButton: {
+    marginHorizontal: 10,
     width: 53,
     height: 53,
     borderRadius: 15,
     justifyContent: 'center',
     alignItems: 'center',
   },
+  smallPrimaryButton: {
+    backgroundColor: colors.primaryGreen,
+  },
   smallSecondatyButton: {
     backgroundColor: colors.primaryBlue,
-    width: 53,
-    height: 53,
-    borderRadius: 15,
-    justifyContent: 'center',
-    alignItems: 'center',
   },
   buttonIcon: {
     marginRight: 35,
   },
-  titlePrimary: {
-    color: colors.secondaryGreen,
+  title: {
     fontWeight: '500',
     fontSize: 18,
+  },
+  titlePrimary: {
+    color: colors.secondaryGreen,
   },
   titleSecondary: {
     color: colors.primaryWhite,
-    fontWeight: '500',
-    fontSize: 18,
   },
   titleSmallPrimary: {
     color: colors.primaryBlack,
-    fontWeight: '500',
     fontSize: 25,
   },
   disabled: {
