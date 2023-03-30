@@ -2,13 +2,27 @@ import { colors } from './../../theme/theme';
 import { StyleSheet } from 'react-native';
 
 export const styles = StyleSheet.create({
+  city: {
+    fontWeight: '400',
+    fontSize: 14,
+    lineHeight: 20,
+    letterSpacing: 0.2,
+    color: colors.quaternaryGrey,
+  },
   containerCard: {
     backgroundColor: colors.primaryWhite,
     height: 80,
     borderRadius: 12,
     flexDirection: 'row',
     justifyContent: 'space-between',
-    marginHorizontal: 26,
+    marginBottom: 15,
+  },
+  containerInformation: {
+    flexDirection: 'row',
+    padding: 15,
+  },
+  containerCity: {
+    flexDirection: 'row',
   },
   quantity: {
     width: 40,
@@ -31,20 +45,6 @@ export const styles = StyleSheet.create({
     lineHeight: 24,
     letterSpacing: 0.15,
     color: colors.primaryBlack,
-  },
-  city: {
-    fontWeight: '400',
-    fontSize: 14,
-    lineHeight: 20,
-    letterSpacing: 0.2,
-    color: colors.quaternaryGrey,
-  },
-  containerInformation: {
-    flexDirection: 'row',
-    padding: 15,
-  },
-  containerCity: {
-    flexDirection: 'row',
   },
   image: {
     paddingHorizontal: 20,
