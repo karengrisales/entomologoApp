@@ -2,7 +2,7 @@ import { colors } from './../../theme/theme';
 import { StyleSheet } from 'react-native';
 
 export const styles = StyleSheet.create({
-  imageCirle: {
+  imageCircleBorder: {
     borderWidth: 3,
     padding: 30,
     borderRadius: 100,
@@ -18,5 +18,8 @@ export const styles = StyleSheet.create({
     },
     shadowOpacity: 0.43,
     shadowRadius: 16.0,
+  },
+  image: {
+    borderRadius: 100,
   },
 });

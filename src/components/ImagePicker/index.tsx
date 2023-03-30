@@ -6,9 +6,12 @@ import { styles } from './styles';
 const ImagePickerComponent = ({ uri, onPress }: any) => {
   return (
     <View style={styles.avatar}>
-      <Image style={styles.avatarImage} source={uri ? { uri } : images.abeja} />
+      <Image
+        style={styles.avatarImage}
+        source={uri ? { uri } : images.insect}
+      />
       <TouchableOpacity style={styles.addButton} onPress={onPress}>
-        <Image style={styles.addButtonIcon} source={images.hormiga} />
+        <Image style={styles.addButtonIcon} source={images.plus} />
       </TouchableOpacity>
     </View>
   );

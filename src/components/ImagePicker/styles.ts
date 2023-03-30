@@ -1,3 +1,4 @@
+import { colors } from './../../theme/theme';
 import { StyleSheet } from 'react-native';
 
 export const styles = StyleSheet.create({
@@ -6,24 +7,25 @@ export const styles = StyleSheet.create({
     marginTop: '40%',
   },
   avatarImage: {
-    height: 260,
-    width: 260,
+    height: 120,
+    width: 120,
     overflow: 'hidden',
-    borderColor: '#ffffff',
+    borderColor: colors.tertiaryGreen,
     borderWidth: 4,
     borderRadius: 260 / 2,
+    opacity: 0.7,
   },
   addButton: {
-    height: 54,
-    width: 54,
+    height: 30,
+    width: 30,
     backgroundColor: '#f2f2fC',
     borderRadius: 50,
     position: 'absolute',
-    right: 104,
-    bottom: 40,
+    right: 160,
+    bottom: 5,
   },
   addButtonIcon: {
-    height: 54,
-    width: 54,
+    height: 30,
+    width: 30,
   },
 });
