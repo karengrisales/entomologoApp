@@ -32,14 +32,14 @@ const StackNavigator = () => {
         },
       }}>
       <Stack.Screen
-        name="RegisterInsect"
-        options={{ title: '' }}
-        component={RegisterInsect}
-      />
-      <Stack.Screen
         name="Register"
         options={{ title: '' }}
         component={Register}
+      />
+      <Stack.Screen
+        name="RegisterInsect"
+        options={{ title: '' }}
+        component={RegisterInsect}
       />
       <Stack.Screen
         name="FormInsect"
