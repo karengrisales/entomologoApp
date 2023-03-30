@@ -7,6 +7,7 @@ import FormInsect from '../screens/FormInsect';
 import Count from '../screens/Count';
 import Records from '../screens/Records';
 import Reports from '../screens/Reports';
+import FormNewInsect from '../screens/FormNewInsect/index';
 
 export type RootStackParams = {
   Register: undefined;
@@ -15,6 +16,7 @@ export type RootStackParams = {
   Count: undefined;
   Records: undefined;
   Reports: undefined;
+  FormNewInsect: undefined;
 };
 
 const Stack = createStackNavigator<RootStackParams>();
@@ -45,6 +47,11 @@ const StackNavigator = () => {
         name="FormInsect"
         options={{ title: '' }}
         component={FormInsect}
+      />
+      <Stack.Screen
+        name="FormNewInsect"
+        options={{ title: '' }}
+        component={FormNewInsect}
       />
       <Stack.Screen name="Count" options={{ title: '' }} component={Count} />
       <Stack.Screen
