@@ -1,17 +1,20 @@
 import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
-import Home from '../screens/Home';
-import Add from '../screens/Add';
-import Edit from '../screens/Edit';
-import Details from '../screens/Details';
-import { TInsect } from '../types/types';
-import { colores, colors } from '../theme/theme';
+import { colors } from '../theme/theme';
+import Register from '../screens/Register';
+import RegisterInsect from '../screens/RegisterInsect';
+import FormInsect from '../screens/FormInsect';
+import Count from '../screens/Count';
+import Records from '../screens/Records';
+import Reports from '../screens/Reports';
 
 export type RootStackParams = {
-  Home: undefined;
-  Details: TInsect;
-  Edit: TInsect;
-  Add: undefined;
+  Register: undefined;
+  RegisterInsect: undefined;
+  FormInsect: undefined;
+  Count: undefined;
+  Records: undefined;
+  Reports: undefined;
 };
 
 const Stack = createStackNavigator<RootStackParams>();
@@ -20,42 +23,39 @@ const StackNavigator = () => {
   return (
     <Stack.Navigator
       screenOptions={{
-        headerBackTitleVisible: false,
-        headerTintColor: colores.primaryPurple,
         headerTitleStyle: {
           fontSize: 22,
         },
         headerShown: false,
-        headerTitleAlign: 'center',
-        headerStyle: {
-          elevation: 0,
-          shadowColor: 'transparent',
-        },
         cardStyle: {
           backgroundColor: colors.primaryGreen,
         },
       }}>
       <Stack.Screen
-        name="Home"
-        options={{ title: '', headerShown: false }}
-        component={Home}
-      />
-      <Stack.Screen
-        name="Add"
-        options={{ title: 'Registrar' }}
-        component={Add}
-      />
-      <Stack.Screen
-        name="Edit"
-        options={({ route }) => ({
-          title: route.params.name,
-        })}
-        component={Edit}
-      />
-      <Stack.Screen
-        name="Details"
+        name="Register"
         options={{ title: '' }}
-        component={Details}
+        component={Register}
+      />
+      <Stack.Screen
+        name="RegisterInsect"
+        options={{ title: '' }}
+        component={RegisterInsect}
+      />
+      <Stack.Screen
+        name="FormInsect"
+        options={{ title: '' }}
+        component={FormInsect}
+      />
+      <Stack.Screen name="Count" options={{ title: '' }} component={Count} />
+      <Stack.Screen
+        name="Records"
+        options={{ title: '' }}
+        component={Records}
+      />
+      <Stack.Screen
+        name="Reports"
+        options={{ title: '' }}
+        component={Reports}
       />
     </Stack.Navigator>
   );
