@@ -39,14 +39,6 @@ export const styles = StyleSheet.create({
     letterSpacing: 0.2,
     color: colors.quaternaryGrey,
   },
-  date: {
-    fontWeight: '400',
-    fontSize: 14,
-    lineHeight: 20,
-    letterSpacing: 0.2,
-    color: colors.quaternaryGrey,
-    marginHorizontal: 3,
-  },
   containerInformation: {
     flexDirection: 'row',
     padding: 15,

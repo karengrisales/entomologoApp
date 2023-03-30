@@ -35,6 +35,8 @@
 			</dict>
 		</dict>
 	</dict>
+  	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Your message to user when the photo library is accessed for the first time</string>
 	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
 	<string>Program requires GPS to track cars and job orders</string>
 	<key>NSLocationAlwaysUsageDescription</key>

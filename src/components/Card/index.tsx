@@ -18,7 +18,7 @@ const Card = ({ insect }: TProps) => {
         <View>
           <Text style={styles.specie}>{insect.name}</Text>
           <Text style={styles.city}>
-            <Text style={styles.date}>{insect.location}</Text>14/12/1994
+            <Text style={styles.city}>{insect.location} </Text>14/12/1994
           </Text>
         </View>
       </View>

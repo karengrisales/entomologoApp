@@ -18,7 +18,7 @@ const ResumeCard = ({ name, quantity, lastItem }: TProps) => {
         </View>
         <Text style={styles.text}>{name}</Text>
       </View>
-      <ImageComponent theme="imageCircle" width={50} height={50} />
+      <ImageComponent theme="imageCircleBorder" width={50} height={50} />
     </View>
   );
 };
