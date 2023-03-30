@@ -16,20 +16,18 @@ const ImageComponent = ({ theme, width, height }: TProps) => {
         theme === 'imageCircleBorder' && styles.imageCircleBorder,
         { width, height },
       ]}>
-      <View style={[styles.containerImage]}>
-        <Image
-          source={require('../../assets/Abeja.png')}
-          style={[
-            styles.image,
-            theme === 'imageCircleBorder'
-              ? {
-                  width: width - 10,
-                  height: height - 10,
-                }
-              : { width, height },
-          ]}
-        />
-      </View>
+      <Image
+        source={require('../../assets/insect.png')}
+        style={[
+          styles.image,
+          theme === 'imageCircleBorder'
+            ? {
+                width: width - 10,
+                height: height - 10,
+              }
+            : { width, height },
+        ]}
+      />
     </View>
   );
 };
