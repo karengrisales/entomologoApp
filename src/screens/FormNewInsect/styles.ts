@@ -2,18 +2,20 @@ import { StyleSheet } from 'react-native';
 
 export const styles = StyleSheet.create({
   container: {
+    flexDirection: 'column',
+    rowGap: 50,
     marginTop: 60,
   },
   image: {
     alignItems: 'center',
-    marginBottom: 30,
   },
-  location: {
-    marginTop: 70,
+  inputs: {
+    flexDirection: 'column',
+    rowGap: 14,
   },
-  buttons: {
+  button: {
+    justifyContent: 'center',
     flexDirection: 'row',
-    justifyContent: 'space-between',
-    marginTop: 132,
+    marginTop: 100,
   },
 });
