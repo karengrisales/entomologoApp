@@ -53,9 +53,7 @@ export const styles = StyleSheet.create({
   smallSecondatyButton: {
     backgroundColor: colors.primaryBlue,
   },
-  buttonIcon: {
-    marginRight: 35,
-  },
+  urlButton: {},
   title: {
     fontWeight: '500',
     fontSize: 18,
@@ -69,6 +67,13 @@ export const styles = StyleSheet.create({
   titleSmallPrimary: {
     color: colors.primaryBlack,
     fontSize: 25,
+  },
+  titleUrl: {
+    fontWeight: '400',
+    fontSize: 14,
+    lineHeight: 20,
+    letterSpacing: 0.25,
+    color: colors.quaternaryGrey,
   },
   disabled: {
     opacity: 0.4,

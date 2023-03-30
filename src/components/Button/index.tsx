@@ -11,7 +11,8 @@ export type TProps = {
     | 'tertiaryButton'
     | 'quaternaryButton'
     | 'smallPrimaryButton'
-    | 'smallSecondaryButton';
+    | 'smallSecondaryButton'
+    | 'urlButton';
   onPress: () => void;
   color?: string;
   size?: number;
@@ -25,6 +26,7 @@ const stylesButton = {
   quaternaryButton: styles.quaternaryButton,
   smallPrimaryButton: styles.smallPrimaryButton,
   smallSecondaryButton: styles.smallSecondatyButton,
+  urlButton: styles.urlButton,
 };
 
 const stylesTitle = {
@@ -34,6 +36,7 @@ const stylesTitle = {
   quaternaryButton: styles.titleSecondary,
   smallPrimaryButton: styles.titleSmallPrimary,
   smallSecondaryButton: styles.titleSmallPrimary,
+  urlButton: styles.titleUrl,
 };
 
 const Button = ({
@@ -55,6 +58,8 @@ const Button = ({
             button,
             theme === 'smallPrimaryButton' || theme === 'smallSecondaryButton'
               ? styles.smallButton
+              : theme === 'urlButton'
+              ? styles.urlButton
               : styles.button,
           ]}>
           <Text style={[styles.title, title]}>{name}</Text>
