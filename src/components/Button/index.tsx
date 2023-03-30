@@ -3,7 +3,7 @@ import { View, Text, TouchableOpacity } from 'react-native';
 import { styles } from './styles';
 
 export type TProps = {
-  name?: string;
+  name: string;
   icon?: string;
   theme?:
     | 'primaryButton'
@@ -50,8 +50,8 @@ const Button = ({
         onPress={onPress}
         activeOpacity={0.5}
         disabled={disabled}>
-        <View style={button}>
-          <Text style={title}>{name}</Text>
+        <View style={[styles.button, button]}>
+          <Text style={[styles.title, title]}>{name}</Text>
         </View>
       </TouchableOpacity>
     </View>

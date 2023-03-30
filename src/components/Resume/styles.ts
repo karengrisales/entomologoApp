@@ -7,6 +7,7 @@ export const styles = StyleSheet.create({
     backgroundColor: colors.quaternaryGreen,
     paddingHorizontal: 16,
     paddingVertical: 24,
+    marginBottom: 120,
   },
   title: {
     fontSize: 24,
