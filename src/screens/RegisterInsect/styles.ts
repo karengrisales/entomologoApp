@@ -4,8 +4,10 @@ export const styles = StyleSheet.create({
   container: {
     flex: 1,
     marginHorizontal: 26,
+    marginTop: 23,
   },
   insects: {
+    marginTop: 23,
     marginBottom: 115,
   },
   buttons: {

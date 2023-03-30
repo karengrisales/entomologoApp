@@ -17,7 +17,7 @@ const Records = () => {
   const navigation = useNavigation<ProfileScreenNavigationProp>();
 
   return (
-    <View style={stylesGlobal.containerGlobal}>
+    <View style={[stylesGlobal.containerGlobal, styles.container]}>
       <Resume />
       <View style={styles.buttons}>
         <Button

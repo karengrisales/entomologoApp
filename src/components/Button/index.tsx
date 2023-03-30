@@ -50,7 +50,13 @@ const Button = ({
         onPress={onPress}
         activeOpacity={0.5}
         disabled={disabled}>
-        <View style={[styles.button, button]}>
+        <View
+          style={[
+            button,
+            theme === 'smallPrimaryButton' || theme === 'smallSecondaryButton'
+              ? styles.smallButton
+              : styles.button,
+          ]}>
           <Text style={[styles.title, title]}>{name}</Text>
         </View>
       </TouchableOpacity>

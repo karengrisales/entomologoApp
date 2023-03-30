@@ -9,15 +9,6 @@ export const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
   },
-  containerImage: {
-    shadowColor: colors.primaryBlack,
-    shadowOffset: {
-      width: 0,
-      height: 12,
-    },
-    shadowOpacity: 0.43,
-    shadowRadius: 16.0,
-  },
   image: {
     borderRadius: 100,
   },
