@@ -5,7 +5,7 @@ export const styles = StyleSheet.create({
   container: {
     flex: 1,
     marginHorizontal: 26,
-    marginBottom: 60,
+    marginTop: 60,
   },
   count: {
     fontSize: 57,
