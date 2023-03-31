@@ -12,6 +12,7 @@ type TProps = {
   multiLine?: boolean;
   value: string;
   onPress?: () => void;
+  editable?: boolean;
 };
 
 const Input = ({
@@ -21,11 +22,12 @@ const Input = ({
   numberOfLines,
   multiLine = false,
   value,
+  editable,
 }: TProps) => {
   return (
     <View>
       <Text style={styles.label}>{label}</Text>
-      <View style={styles.containerInput}>
+      <View style={[styles.containerInput, editable && styles.editable]}>
         <TextInput
           placeholder={placeholder}
           numberOfLines={numberOfLines}
@@ -34,6 +36,7 @@ const Input = ({
           style={multiLine ? styles.textArea : styles.textInput}
           value={value}
           cursorColor={colores.primaryPurple}
+          editable={editable ? false : true}
         />
       </View>
     </View>

@@ -17,7 +17,8 @@ export const useLocationReverse = (lat: number, lon: number) => {
 
   useEffect(() => {
     getLocationResponse();
-  });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return { ...locationReverseResponse };
 };

@@ -30,4 +30,7 @@ export const styles = StyleSheet.create({
     height: 50,
     color: colors.secondaryGrey,
   },
+  editable: {
+    opacity: 0.5,
+  },
 });

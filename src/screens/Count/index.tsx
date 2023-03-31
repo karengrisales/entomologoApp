@@ -4,8 +4,13 @@ import Button from '../../components/Button';
 import CountComponent from '../../components/Count';
 import Input from '../../components/Input';
 import { styles } from './styles';
+import { RouteProp, useRoute } from '@react-navigation/native';
+import { RootStackParams } from '../../navigation/StackNavigator';
+
+type ProfileScreenRouteProp = RouteProp<RootStackParams, 'Count'>;
 
 const Count = () => {
+  const route = useRoute<ProfileScreenRouteProp>();
   const [observation, setObservation] = useState('');
 
   return (
@@ -15,7 +20,7 @@ const Count = () => {
           <Text style={styles.count}>00</Text>
         </View>
       </View>
-      <CountComponent />
+      <CountComponent name={route.params.name} />
       <Input
         placeholder="Agregar comentario"
         value={observation}
