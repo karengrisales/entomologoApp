@@ -59,7 +59,8 @@ const Register = () => {
   useEffect(() => {
     SplashScreen.hide();
     getUser();
-  });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
     <View style={[stylesGlobal.containerGlobal, styles.container]}>
@@ -103,6 +104,10 @@ const Register = () => {
                 {
                   name: 'Avispa',
                   url: 'https://es.wikipedia.org/wiki/Avispa',
+                },
+                {
+                  name: 'Otro',
+                  url: '',
                 },
               ],
               records: [],

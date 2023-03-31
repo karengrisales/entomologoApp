@@ -17,7 +17,9 @@ const FormNewInsect = () => {
       const value = await AsyncStorage.getItem('user');
       if (value !== null) {
         const data: TRegister = JSON.parse(value);
-        const newInsectJson = JSON.stringify(data.insects.unshift(newInsect));
+        data.insects.unshift(newInsect);
+        const newInsectJson = JSON.stringify(data);
+        console.log(newInsectJson);
         await AsyncStorage.setItem('user', newInsectJson);
       }
     } catch (e) {

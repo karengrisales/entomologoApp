@@ -52,7 +52,7 @@ const FormInsect = () => {
 
   useEffect(() => {
     getInsects();
-  });
+  }, []);
 
   return (
     <View style={[stylesGlobal.containerGlobal, styles.container]}>
