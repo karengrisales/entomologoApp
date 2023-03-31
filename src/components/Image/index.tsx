@@ -2,14 +2,16 @@ import React from 'react';
 import { Image } from 'react-native';
 import { View } from 'react-native';
 import { styles } from './styles';
+import { images } from '../../assets';
 
 type TProps = {
   theme?: 'imageCircle' | 'imageCircleBorder';
   width: number;
   height: number;
+  uri?: string;
 };
 
-const ImageComponent = ({ theme, width, height }: TProps) => {
+const ImageComponent = ({ theme, width, height, uri }: TProps) => {
   return (
     <View
       style={[
@@ -17,7 +19,7 @@ const ImageComponent = ({ theme, width, height }: TProps) => {
         { width, height },
       ]}>
       <Image
-        source={require('../../assets/insect.png')}
+        source={uri ? uri : images.insect}
         style={[
           styles.image,
           theme === 'imageCircleBorder'

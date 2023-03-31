@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { View } from 'react-native';
+import { images } from '../../assets';
 import ImageComponent from '../../components/Image';
 import Input from '../../components/Input';
 import Select from '../../components/Select';
@@ -14,7 +15,12 @@ const FormInsect = () => {
   return (
     <View style={[stylesGlobal.containerGlobal, styles.container]}>
       <View style={styles.image}>
-        <ImageComponent width={120} height={120} theme="imageCircleBorder" />
+        <ImageComponent
+          width={120}
+          height={120}
+          theme="imageCircleBorder"
+          uri={images.hormiga}
+        />
       </View>
       <View style={styles.inputs}>
         <Select
