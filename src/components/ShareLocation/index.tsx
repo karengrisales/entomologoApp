@@ -1,18 +1,22 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Text } from 'react-native';
 import { View } from 'react-native';
 import { colors } from '../../theme/theme';
 import ToggleSwitch from 'toggle-switch-react-native';
 import { styles } from './styles';
 
-const ShareLocation = () => {
-  const [isEnabled, setIsEnabled] = useState(false);
-  const toggleSwitch = () => setIsEnabled(previousState => !previousState);
+type TProps = {
+  enabled: boolean;
+  onToggle: React.Dispatch<React.SetStateAction<boolean>>;
+};
+
+const ShareLocation = ({ enabled, onToggle }: TProps) => {
+  const toggleSwitch = () => onToggle(previousState => !previousState);
 
   return (
     <View style={styles.container}>
       <ToggleSwitch
-        isOn={isEnabled}
+        isOn={enabled}
         onToggle={toggleSwitch}
         size="medium"
         thumbOffStyle={styles.circle}
