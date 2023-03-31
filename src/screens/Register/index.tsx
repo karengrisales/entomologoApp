@@ -11,7 +11,7 @@ import { stylesGlobal } from '../../theme/theme';
 import { styles } from './styles';
 import SplashScreen from 'react-native-splash-screen';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import { TInsect } from '../../types/types';
+import { TInsect, TInsectRegister } from '../../types/types';
 
 type ProfileScreenNavigationProp = StackNavigationProp<
   RootStackParams,
@@ -23,6 +23,7 @@ type TRegister = {
   photo?: string;
   location: boolean;
   insects: TInsect[];
+  records: TInsectRegister[];
 };
 
 const Register = () => {
@@ -73,7 +74,29 @@ const Register = () => {
         <Button
           name="Guardar"
           onPress={() => {
-            storeUser({ name, location, insects: [] });
+            storeUser({
+              name,
+              location,
+              insects: [
+                {
+                  name: 'Abeja',
+                  url: 'https://es.wikipedia.org/wiki/Anthophila',
+                },
+                {
+                  name: 'Hormiga',
+                  url: 'https://es.wikipedia.org/wiki/Formicidae',
+                },
+                {
+                  name: 'Abejorro',
+                  url: 'https://es.wikipedia.org/wiki/Bombus',
+                },
+                {
+                  name: 'Avispa',
+                  url: 'https://es.wikipedia.org/wiki/Avispa',
+                },
+              ],
+              records: [],
+            });
             navigation.navigate('RegisterInsect');
           }}
         />

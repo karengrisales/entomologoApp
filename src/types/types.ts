@@ -1,32 +1,38 @@
 export type TInsect = {
   name: string;
+  image?: string;
+  url: string;
+};
+
+export type TInsectRegister = {
+  name: string;
   location: string;
   quantity: number;
   observation?: string;
   habitat?: string;
   image?: string;
-  fecha?: string;
+  date?: string;
 };
 
 export type TInsectsState = {
-  insects: TInsect[];
+  insects: TInsectRegister[];
 };
 
 export type TSetInsect = {
   type: 'SET_INSECT';
-  payload: TInsect;
+  payload: TInsectRegister;
 };
 
 export type TEditInsect = {
   type: 'EDIT_INSECT';
-  payload: TInsect;
+  payload: TInsectRegister;
 };
 
 export type InsectsActionType = TSetInsect | TEditInsect;
 
 export type TActions = {
-  setInsect: (insect: TInsect) => void;
-  editInsect: (insect: TInsect) => void;
+  setInsect: (insect: TInsectRegister) => void;
+  editInsect: (insect: TInsectRegister) => void;
 };
 
 export type TInsectsContext = {
