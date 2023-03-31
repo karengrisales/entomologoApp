@@ -7,6 +7,9 @@ export const styles = StyleSheet.create({
     marginHorizontal: 26,
     flex: 1,
   },
+  cards: {
+    marginBottom: 120,
+  },
   containerCard: {
     backgroundColor: colors.primaryWhite,
     height: 80,
@@ -62,6 +65,7 @@ export const styles = StyleSheet.create({
     borderBottomStartRadius: 12,
     borderBottomEndRadius: 12,
     padding: 20,
+    marginBottom: 20,
   },
   containerUrl: {
     flexDirection: 'row',
@@ -76,5 +80,9 @@ export const styles = StyleSheet.create({
   insects: {
     marginTop: 15,
     marginBottom: 115,
+  },
+  map: {
+    height: 188,
+    backgroundColor: colors.secondaryGreen,
   },
 });

@@ -12,16 +12,8 @@ const CountComponent = () => {
         <Text style={styles.text}>Hormiga</Text>
       </View>
       <View style={styles.information}>
-        <Button
-          onPress={() => console.log('')}
-          name="-"
-          theme="smallSecondaryButton"
-        />
-        <Button
-          onPress={() => console.log('')}
-          name="+"
-          theme="smallPrimaryButton"
-        />
+        <Button onPress={() => {}} name="-" theme="smallSecondaryButton" />
+        <Button onPress={() => {}} name="+" theme="smallPrimaryButton" />
       </View>
     </View>
   );

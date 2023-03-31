@@ -7,6 +7,7 @@ import { styles } from './styles';
 
 const Count = () => {
   const [observation, setObservation] = useState('');
+
   return (
     <View style={styles.container}>
       <View style={styles.center}>

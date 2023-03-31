@@ -3,7 +3,7 @@ import React from 'react';
 import HeaderComponent from './src/components/Header/indes';
 import { InsectsProvider } from './src/contexts/insects/insectsContext';
 import { LocationProvider } from './src/contexts/location/locationContext';
-import StackNavigatorInitial from './src/navigation/StackNavigatorInitial';
+import StackNavigator from './src/navigation/StackNavigator';
 
 export const App = () => {
   return (
@@ -11,7 +11,7 @@ export const App = () => {
       <LocationProvider>
         <InsectsProvider>
           <HeaderComponent />
-          <StackNavigatorInitial />
+          <StackNavigator />
         </InsectsProvider>
       </LocationProvider>
     </NavigationContainer>
