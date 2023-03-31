@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { View } from 'react-native';
 import ImageComponent from '../../components/Image';
 import Input from '../../components/Input';
@@ -9,15 +9,51 @@ import { RootStackParams } from '../../navigation/StackNavigator';
 import Button from '../../components/Button';
 import { stylesGlobal } from '../../theme/theme';
 import { styles } from './styles';
+import SplashScreen from 'react-native-splash-screen';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import { TInsect } from '../../types/types';
 
 type ProfileScreenNavigationProp = StackNavigationProp<
   RootStackParams,
   'Register'
 >;
 
+type TRegister = {
+  name: string;
+  photo?: string;
+  location: boolean;
+  insects: TInsect[];
+};
+
 const Register = () => {
   const navigation = useNavigation<ProfileScreenNavigationProp>();
   const [name, setName] = useState('');
+  const [location, setLocation] = useState(false);
+
+  const storeUser = async (value: TRegister) => {
+    try {
+      const jsonValue = JSON.stringify(value);
+      await AsyncStorage.setItem('user', jsonValue);
+    } catch (e) {
+      console.warn('No se pudo almacenar la información');
+    }
+  };
+
+  const getUser = async () => {
+    try {
+      const value = await AsyncStorage.getItem('user');
+      if (value !== null) {
+        navigation.navigate('RegisterInsect');
+      }
+    } catch (e) {
+      console.warn('No se encontró ningun usuario');
+    }
+  };
+
+  useEffect(() => {
+    SplashScreen.hide();
+    getUser();
+  });
 
   return (
     <View style={[stylesGlobal.containerGlobal, styles.container]}>
@@ -26,7 +62,7 @@ const Register = () => {
       </View>
       <Input value={name} onChangeInput={setName} label="Nombre" />
       <View style={styles.location}>
-        <ShareLocation />
+        <ShareLocation enabled={location} onToggle={setLocation} />
       </View>
       <View style={styles.buttons}>
         <Button
@@ -36,7 +72,10 @@ const Register = () => {
         />
         <Button
           name="Guardar"
-          onPress={() => navigation.navigate('RegisterInsect')}
+          onPress={() => {
+            storeUser({ name, location, insects: [] });
+            navigation.navigate('RegisterInsect');
+          }}
         />
       </View>
     </View>
