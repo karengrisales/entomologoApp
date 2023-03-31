@@ -4,16 +4,14 @@ import { StyleSheet } from 'react-native';
 export const styles = StyleSheet.create({
   avatar: {
     alignItems: 'center',
-    marginTop: '40%',
   },
   avatarImage: {
     height: 120,
     width: 120,
-    overflow: 'hidden',
     borderColor: colors.tertiaryGreen,
     borderWidth: 4,
-    borderRadius: 260 / 2,
-    opacity: 0.7,
+    borderRadius: 100,
+    opacity: 1,
   },
   addButton: {
     height: 30,
@@ -21,8 +19,8 @@ export const styles = StyleSheet.create({
     backgroundColor: '#f2f2fC',
     borderRadius: 50,
     position: 'absolute',
-    right: 160,
-    bottom: 5,
+    right: 10,
+    bottom: 0,
   },
   addButtonIcon: {
     height: 30,

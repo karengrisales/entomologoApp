@@ -1,11 +1,11 @@
 import React from 'react';
 import { Text, View } from 'react-native';
-import { TInsect } from '../../types/types';
+import { TInsectRegister } from '../../types/types';
 import ImageComponent from '../Image';
 import { styles } from './styles';
 
 type TProps = {
-  insect: TInsect;
+  insect: TInsectRegister;
 };
 
 const Card = ({ insect }: TProps) => {

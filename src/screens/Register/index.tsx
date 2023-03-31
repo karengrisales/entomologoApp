@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import { View } from 'react-native';
-import ImageComponent from '../../components/Image';
 import Input from '../../components/Input';
 import ShareLocation from '../../components/ShareLocation';
 import { useNavigation } from '@react-navigation/native';
@@ -12,6 +11,12 @@ import { styles } from './styles';
 import SplashScreen from 'react-native-splash-screen';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { TRegister } from '../../types/types';
+import ImagePickerComponent from '../../components/ImagePicker';
+import {
+  ImagePickerResponse,
+  launchImageLibrary,
+} from 'react-native-image-picker';
+import { images } from '../../assets';
 
 type ProfileScreenNavigationProp = StackNavigationProp<
   RootStackParams,
@@ -20,6 +25,7 @@ type ProfileScreenNavigationProp = StackNavigationProp<
 
 const Register = () => {
   const navigation = useNavigation<ProfileScreenNavigationProp>();
+  const [pickerResponse, setPickerResponse] = useState<ImagePickerResponse>();
   const [name, setName] = useState('');
   const [location, setLocation] = useState(false);
 
@@ -43,6 +49,13 @@ const Register = () => {
     }
   };
 
+  const onImageLibraryPress = async () => {
+    const result = await launchImageLibrary({ mediaType: 'photo' });
+    setPickerResponse(result);
+  };
+
+  const uri = pickerResponse?.assets && pickerResponse.assets[0].uri;
+
   useEffect(() => {
     SplashScreen.hide();
     getUser();
@@ -51,7 +64,11 @@ const Register = () => {
   return (
     <View style={[stylesGlobal.containerGlobal, styles.container]}>
       <View style={styles.image}>
-        <ImageComponent theme="imageCircle" width={120} height={120} />
+        <ImagePickerComponent
+          uri={uri}
+          onPress={onImageLibraryPress}
+          character="avatar"
+        />
       </View>
       <Input value={name} onChangeInput={setName} label="Nombre" />
       <View style={styles.location}>
@@ -69,6 +86,7 @@ const Register = () => {
             storeUser({
               name,
               location,
+              photo: uri || images.avatar,
               insects: [
                 {
                   name: 'Abeja',
