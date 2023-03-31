@@ -11,20 +11,12 @@ import { stylesGlobal } from '../../theme/theme';
 import { styles } from './styles';
 import SplashScreen from 'react-native-splash-screen';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import { TInsect, TInsectRegister } from '../../types/types';
+import { TRegister } from '../../types/types';
 
 type ProfileScreenNavigationProp = StackNavigationProp<
   RootStackParams,
   'Register'
 >;
-
-type TRegister = {
-  name: string;
-  photo?: string;
-  location: boolean;
-  insects: TInsect[];
-  records: TInsectRegister[];
-};
 
 const Register = () => {
   const navigation = useNavigation<ProfileScreenNavigationProp>();

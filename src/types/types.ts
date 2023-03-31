@@ -1,3 +1,11 @@
+export type TRegister = {
+  name: string;
+  photo?: string;
+  location: boolean;
+  insects: TInsect[];
+  records: TInsectRegister[];
+};
+
 export type TInsect = {
   name: string;
   image?: string;

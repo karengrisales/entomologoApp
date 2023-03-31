@@ -13,4 +13,9 @@ export const styles = StyleSheet.create({
     flexDirection: 'column',
     rowGap: 14,
   },
+  button: {
+    justifyContent: 'center',
+    flexDirection: 'row',
+    marginTop: 70,
+  },
 });
