@@ -5,4 +5,5 @@ export const images = {
   hormiga: require('./Hormiga.png'),
   insect: require('./insect.png'),
   plus: require('./plus.png'),
+  avatar: require('./avatar.png'),
 };

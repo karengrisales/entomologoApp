@@ -2,18 +2,18 @@ import { StyleSheet } from 'react-native';
 
 export const styles = StyleSheet.create({
   container: {
-    marginTop: 60,
+    marginTop: 210,
   },
   image: {
     alignItems: 'center',
     marginBottom: 30,
   },
   location: {
-    marginTop: 70,
+    marginTop: 90,
   },
   buttons: {
     flexDirection: 'row',
     justifyContent: 'space-between',
-    marginTop: 132,
+    marginTop: 80,
   },
 });

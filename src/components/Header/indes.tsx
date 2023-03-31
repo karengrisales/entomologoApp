@@ -1,15 +1,34 @@
-import React from 'react';
-import { SafeAreaView, View } from 'react-native';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import React, { useEffect, useState } from 'react';
+import { images } from '../../assets';
+import { TRegister } from '../../types/types';
 import ImageComponent from '../Image';
-import { styles } from './styles';
 
 const HeaderComponent = () => {
+  const [photo, setPhoto] = useState<TRegister>();
+  const getData = async () => {
+    try {
+      const value = await AsyncStorage.getItem('user');
+      if (value !== null) {
+        const result = JSON.parse(value);
+        setPhoto(result);
+      }
+    } catch (e) {
+      console.warn('No se encuentra el usuario');
+    }
+  };
+
+  useEffect(() => {
+    getData();
+  }, [photo]);
+
   return (
-    <SafeAreaView style={styles.container}>
-      <View style={styles.image}>
-        <ImageComponent width={65} height={65} />
-      </View>
-    </SafeAreaView>
+    <ImageComponent
+      width={65}
+      height={65}
+      uri={photo?.photo || images.avatar}
+      character="avatar"
+    />
   );
 };
 
