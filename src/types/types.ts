@@ -8,7 +8,7 @@ export type TRegister = {
 
 export type TInsect = {
   name: string;
-  image?: string;
+  image: string;
   url: string;
 };
 

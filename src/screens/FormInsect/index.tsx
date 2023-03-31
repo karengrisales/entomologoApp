@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import { View } from 'react-native';
-import { images } from '../../assets';
 import ImageComponent from '../../components/Image';
 import Input from '../../components/Input';
 import Select from '../../components/Select';
@@ -11,7 +10,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import Button from '../../components/Button';
 import { StackNavigationProp } from '@react-navigation/stack';
 import { RootStackParams } from '../../navigation/StackNavigator';
-import { useNavigation } from '@react-navigation/native';
+import { useIsFocused, useNavigation } from '@react-navigation/native';
 
 type ProfileScreenNavigationProp = StackNavigationProp<
   RootStackParams,
@@ -20,17 +19,22 @@ type ProfileScreenNavigationProp = StackNavigationProp<
 
 const FormInsect = () => {
   const navigation = useNavigation<ProfileScreenNavigationProp>();
+  const isFocused = useIsFocused();
   const [insects, setInsects] = useState<TInsect[]>([]);
-  const [url, setUrl] = useState('');
   const [option, setOption] = useState('');
+  const [url, setUrl] = useState('');
+  const [image, setImage] = useState('');
 
   const handleSelect = () => {
     if (option === 'Otro') {
       navigation.navigate('FormNewInsect');
     }
-    insects.find(insect =>
-      insect.name === option ? setUrl(insect.url) : null,
-    );
+    insects.find(insect => {
+      if (insect.name === option) {
+        setUrl(insect.url);
+        setImage(insect.image);
+      }
+    });
   };
 
   const getInsects = async () => {
@@ -52,7 +56,7 @@ const FormInsect = () => {
 
   useEffect(() => {
     getInsects();
-  }, []);
+  }, [isFocused]);
 
   return (
     <View style={[stylesGlobal.containerGlobal, styles.container]}>
@@ -61,7 +65,7 @@ const FormInsect = () => {
           width={120}
           height={120}
           theme="imageCircleBorder"
-          uri={images.hormiga}
+          uri={image}
         />
       </View>
       <View style={styles.inputs}>
@@ -84,7 +88,7 @@ const FormInsect = () => {
           <Button
             name="Seleecionar"
             onPress={() => {
-              navigation.navigate('Count', { name: option, url });
+              navigation.navigate('Count', { name: option, url, image });
             }}
           />
         </View>
