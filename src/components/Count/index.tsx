@@ -6,13 +6,14 @@ import { styles } from './styles';
 
 type TProps = {
   name: string;
+  image: string;
 };
 
-const CountComponent = ({ name }: TProps) => {
+const CountComponent = ({ name, image }: TProps) => {
   return (
     <View style={styles.container}>
       <View style={styles.information}>
-        <ImageComponent width={70} height={70} />
+        <ImageComponent width={70} height={70} uri={image} />
         <Text style={styles.text}>{name}</Text>
       </View>
       <View style={styles.information}>

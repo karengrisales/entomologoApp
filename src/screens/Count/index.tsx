@@ -20,7 +20,7 @@ const Count = () => {
           <Text style={styles.count}>00</Text>
         </View>
       </View>
-      <CountComponent name={route.params.name} />
+      <CountComponent name={route.params.name} image={route.params.image} />
       <Input
         placeholder="Agregar comentario"
         value={observation}

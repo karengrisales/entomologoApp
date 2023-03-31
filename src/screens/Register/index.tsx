@@ -10,7 +10,7 @@ import { stylesGlobal } from '../../theme/theme';
 import { styles } from './styles';
 import SplashScreen from 'react-native-splash-screen';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import { TRegister } from '../../types/types';
+import { TInsect, TRegister } from '../../types/types';
 import ImagePickerComponent from '../../components/ImagePicker';
 import {
   ImagePickerResponse,
@@ -22,6 +22,34 @@ type ProfileScreenNavigationProp = StackNavigationProp<
   RootStackParams,
   'Register'
 >;
+
+const initialInsects: TInsect[] = [
+  {
+    name: 'Abeja',
+    url: 'https://es.wikipedia.org/wiki/Anthophila',
+    image: images.abeja,
+  },
+  {
+    name: 'Hormiga',
+    url: 'https://es.wikipedia.org/wiki/Formicidae',
+    image: images.hormiga,
+  },
+  {
+    name: 'Abejorro',
+    url: 'https://es.wikipedia.org/wiki/Bombus',
+    image: images.abejorro,
+  },
+  {
+    name: 'Avispa',
+    url: 'https://es.wikipedia.org/wiki/Avispa',
+    image: images.avispa,
+  },
+  {
+    name: 'Otro',
+    url: '',
+    image: '',
+  },
+];
 
 const Register = () => {
   const navigation = useNavigation<ProfileScreenNavigationProp>();
@@ -88,28 +116,7 @@ const Register = () => {
               name,
               location,
               photo: uri || images.avatar,
-              insects: [
-                {
-                  name: 'Abeja',
-                  url: 'https://es.wikipedia.org/wiki/Anthophila',
-                },
-                {
-                  name: 'Hormiga',
-                  url: 'https://es.wikipedia.org/wiki/Formicidae',
-                },
-                {
-                  name: 'Abejorro',
-                  url: 'https://es.wikipedia.org/wiki/Bombus',
-                },
-                {
-                  name: 'Avispa',
-                  url: 'https://es.wikipedia.org/wiki/Avispa',
-                },
-                {
-                  name: 'Otro',
-                  url: '',
-                },
-              ],
+              insects: initialInsects,
               records: [],
             });
             navigation.navigate('RegisterInsect');
