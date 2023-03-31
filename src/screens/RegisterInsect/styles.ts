@@ -4,7 +4,12 @@ export const styles = StyleSheet.create({
   container: {
     flex: 1,
     marginHorizontal: 26,
-    marginTop: 23,
+    marginTop: 30,
+  },
+  containerZero: {
+    flex: 1,
+    marginHorizontal: 26,
+    marginTop: 300,
   },
   insects: {
     marginTop: 23,

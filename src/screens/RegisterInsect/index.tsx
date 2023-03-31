@@ -21,7 +21,10 @@ const RegisterInsect = () => {
   const { state } = useInsects();
 
   return (
-    <View style={styles.container}>
+    <View
+      style={
+        state.insects.length === 0 ? styles.containerZero : styles.container
+      }>
       <NewCount />
       <FlatList
         data={state.insects}

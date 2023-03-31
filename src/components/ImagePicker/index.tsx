@@ -3,12 +3,24 @@ import { Image, TouchableOpacity, View } from 'react-native';
 import { images } from '../../assets';
 import { styles } from './styles';
 
-const ImagePickerComponent = ({ uri, onPress }: any) => {
+type TProps = {
+  uri?: string;
+  onPress: () => void;
+  character?: 'insect' | 'avatar';
+};
+
+const ImagePickerComponent = ({
+  uri,
+  onPress,
+  character = 'insect',
+}: TProps) => {
   return (
     <View style={styles.avatar}>
       <Image
         style={styles.avatarImage}
-        source={uri ? { uri } : images.insect}
+        source={
+          uri ? { uri } : character === 'insect' ? images.insect : images.avatar
+        }
       />
       <TouchableOpacity style={styles.addButton} onPress={onPress}>
         <Image style={styles.addButtonIcon} source={images.plus} />
