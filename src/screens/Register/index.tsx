@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { View } from 'react-native';
+import { Text, View } from 'react-native';
 import Input from '../../components/Input';
 import ShareLocation from '../../components/ShareLocation';
 import { useIsFocused, useNavigation } from '@react-navigation/native';
@@ -57,11 +57,14 @@ const Register = () => {
   const [pickerResponse, setPickerResponse] = useState<ImagePickerResponse>();
   const [name, setName] = useState('');
   const [location, setLocation] = useState(false);
+  const [message, setMessage] = useState(false);
 
   const storeUser = async (value: TRegister) => {
     try {
       const jsonValue = JSON.stringify(value);
       await AsyncStorage.setItem('user', jsonValue);
+      location && navigation.navigate('RegisterInsect');
+      setMessage(true);
     } catch (e) {
       console.warn('No se pudo almacenar la información');
     }
@@ -103,8 +106,13 @@ const Register = () => {
       <Input value={name} onChangeInput={setName} label="Nombre" />
       <View style={styles.location}>
         <ShareLocation enabled={location} onToggle={setLocation} />
+        {!location && message && (
+          <Text style={styles.text}>
+            Por favor comparte tu ubicación para continuar.
+          </Text>
+        )}
       </View>
-      <View style={styles.buttons}>
+      <View style={[styles.buttons, !location && styles.buttonError]}>
         <Button
           name="Omitir"
           theme="secondaryButton"
@@ -120,7 +128,6 @@ const Register = () => {
               insects: initialInsects,
               records: [],
             });
-            navigation.navigate('RegisterInsect');
           }}
         />
       </View>

@@ -1,5 +1,5 @@
 import { StyleSheet } from 'react-native';
-import { colores } from '../../theme/theme';
+import { colors } from '../../theme/theme';
 
 export const styles = StyleSheet.create({
   container: {
@@ -26,6 +26,6 @@ export const styles = StyleSheet.create({
     textAlign: 'center',
     marginTop: 30,
     fontSize: 20,
-    color: colores.error,
+    color: colors.primaryRed,
   },
 });
