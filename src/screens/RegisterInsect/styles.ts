@@ -1,6 +1,17 @@
+import { colors } from './../../theme/theme';
 import { StyleSheet } from 'react-native';
 
 export const styles = StyleSheet.create({
+  containerGlobal: {
+    flex: 1,
+  },
+  text: {
+    marginTop: 200,
+    marginHorizontal: 26,
+    color: colors.primaryRed,
+    fontSize: 18,
+    textAlign: 'center',
+  },
   container: {
     flex: 1,
     marginHorizontal: 26,

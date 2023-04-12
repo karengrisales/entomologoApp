@@ -27,6 +27,7 @@ export const colors = {
   quinaryGrey: '#C1C9BE',
   primaryBlack: '#0E1F11',
   secondaryBlack: '#414941',
+  primaryRed: '#ED0039',
 };
 
 export const size = {

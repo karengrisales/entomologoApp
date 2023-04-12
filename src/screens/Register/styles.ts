@@ -1,3 +1,4 @@
+import { colors } from './../../theme/theme';
 import { StyleSheet } from 'react-native';
 
 export const styles = StyleSheet.create({
@@ -11,9 +12,19 @@ export const styles = StyleSheet.create({
   location: {
     marginTop: 70,
   },
+  text: {
+    marginTop: 20,
+    marginHorizontal: 26,
+    color: colors.primaryRed,
+    fontSize: 18,
+    textAlign: 'center',
+  },
   buttons: {
-    flexDirection: 'row',
     justifyContent: 'space-between',
-    marginTop: 80,
+    flexDirection: 'row',
+    marginTop: 93,
+  },
+  buttonError: {
+    marginTop: 30,
   },
 });
