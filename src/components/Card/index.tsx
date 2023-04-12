@@ -18,12 +18,13 @@ const Card = ({ insect }: TProps) => {
         <View>
           <Text style={styles.specie}>{insect.name}</Text>
           <Text style={styles.city}>
-            <Text style={styles.city}>{insect.location} </Text>14/12/1994
+            <Text style={styles.city}>{insect.location} </Text>
+            {insect.date}
           </Text>
         </View>
       </View>
       <View style={styles.image}>
-        <ImageComponent width={70} height={70} />
+        <ImageComponent width={70} height={70} uri={insect.image} />
       </View>
     </View>
   );

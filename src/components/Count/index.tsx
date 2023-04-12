@@ -7,9 +7,10 @@ import { styles } from './styles';
 type TProps = {
   name: string;
   image: string;
+  setCount: React.Dispatch<React.SetStateAction<number>>;
 };
 
-const CountComponent = ({ name, image }: TProps) => {
+const CountComponent = ({ name, image, setCount }: TProps) => {
   return (
     <View style={styles.container}>
       <View style={styles.information}>
@@ -17,8 +18,18 @@ const CountComponent = ({ name, image }: TProps) => {
         <Text style={styles.text}>{name}</Text>
       </View>
       <View style={styles.information}>
-        <Button onPress={() => {}} name="-" theme="smallSecondaryButton" />
-        <Button onPress={() => {}} name="+" theme="smallPrimaryButton" />
+        <Button
+          onPress={() =>
+            setCount(prevState => (prevState !== 0 ? prevState - 1 : 0))
+          }
+          name="-"
+          theme="smallSecondaryButton"
+        />
+        <Button
+          onPress={() => setCount(prevState => prevState + 1)}
+          name="+"
+          theme="smallPrimaryButton"
+        />
       </View>
     </View>
   );

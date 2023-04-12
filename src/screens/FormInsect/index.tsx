@@ -86,7 +86,7 @@ const FormInsect = () => {
       {option && (
         <View style={styles.button}>
           <Button
-            name="Seleecionar"
+            name="Seleccionar"
             onPress={() => {
               navigation.navigate('Count', { name: option, url, image });
             }}

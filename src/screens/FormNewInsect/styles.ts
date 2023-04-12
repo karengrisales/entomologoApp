@@ -1,4 +1,5 @@
 import { StyleSheet } from 'react-native';
+import { colores } from '../../theme/theme';
 
 export const styles = StyleSheet.create({
   container: {
@@ -17,5 +18,14 @@ export const styles = StyleSheet.create({
     justifyContent: 'center',
     flexDirection: 'row',
     marginTop: 100,
+  },
+  buttonError: {
+    marginTop: 6,
+  },
+  textError: {
+    textAlign: 'center',
+    marginTop: 30,
+    fontSize: 20,
+    color: colores.error,
   },
 });
