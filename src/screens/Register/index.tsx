@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { View } from 'react-native';
 import Input from '../../components/Input';
 import ShareLocation from '../../components/ShareLocation';
-import { useNavigation } from '@react-navigation/native';
+import { useIsFocused, useNavigation } from '@react-navigation/native';
 import { StackNavigationProp } from '@react-navigation/stack';
 import { RootStackParams } from '../../navigation/StackNavigator';
 import Button from '../../components/Button';
@@ -53,6 +53,7 @@ const initialInsects: TInsect[] = [
 
 const Register = () => {
   const navigation = useNavigation<ProfileScreenNavigationProp>();
+  const isFocused = useIsFocused();
   const [pickerResponse, setPickerResponse] = useState<ImagePickerResponse>();
   const [name, setName] = useState('');
   const [location, setLocation] = useState(false);
@@ -88,7 +89,7 @@ const Register = () => {
     SplashScreen.hide();
     getUser();
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [isFocused]);
 
   return (
     <View style={[stylesGlobal.containerGlobal, styles.container]}>

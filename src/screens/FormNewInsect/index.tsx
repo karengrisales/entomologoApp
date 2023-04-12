@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View } from 'react-native';
+import { Text, View } from 'react-native';
 import Button from '../../components/Button';
 import Input from '../../components/Input';
 import { stylesGlobal } from '../../theme/theme';
@@ -25,6 +25,7 @@ const FormNewInsect = () => {
   const navigation = useNavigation<ProfileScreenNavigationProp>();
   const [insect, setInsect] = useState('');
   const [url, setUrl] = useState('');
+  const [error, setError] = useState(false);
   const [pickerResponse, setPickerResponse] = useState<ImagePickerResponse>();
 
   const onImageLibraryPress = async () => {
@@ -35,14 +36,32 @@ const FormNewInsect = () => {
   const uri = pickerResponse?.assets && pickerResponse.assets[0].uri;
 
   const setNewInsect = async (newInsect: TInsect) => {
+    setError(false);
     try {
       const value = await AsyncStorage.getItem('user');
       if (value !== null) {
         const data: TRegister = JSON.parse(value);
-        data.insects.unshift(newInsect);
-        const newInsectJson = JSON.stringify(data);
-        await AsyncStorage.setItem('user', newInsectJson);
-        navigation.goBack();
+
+        const coincidence = data.insects.find(insectCoincidence => {
+          if (
+            insectCoincidence.name.toUpperCase() ===
+            newInsect.name.toUpperCase()
+          ) {
+            return insectCoincidence;
+          }
+        });
+
+        if (coincidence === undefined) {
+          data.insects.unshift(newInsect);
+          const newInsectJson = JSON.stringify(data);
+          await AsyncStorage.setItem('user', newInsectJson);
+          navigation.goBack();
+        } else {
+          setError(true);
+          setTimeout(() => {
+            setError(false);
+          }, 3000);
+        }
       }
     } catch (e) {
       console.warn('No se encontró información');
@@ -66,8 +85,13 @@ const FormNewInsect = () => {
           value={url}
           onChangeInput={setUrl}
         />
+        {error && (
+          <Text style={styles.textError}>
+            Esta especie ya se encuentra registrada
+          </Text>
+        )}
       </View>
-      <View style={styles.button}>
+      <View style={[styles.button, error && styles.buttonError]}>
         <Button
           name="Guardar"
           onPress={() => {
