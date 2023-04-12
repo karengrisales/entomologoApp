@@ -7,7 +7,7 @@ import { RootStackParams } from '../../navigation/StackNavigator';
 import ResumeCard from '../ResumeCard';
 import { styles } from './styles';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import { TInsectRegister, TRegister } from '../../types/types';
+import { TInsect, TInsectRegister, TRegister } from '../../types/types';
 
 type ProfileScreenNavigationProp = StackNavigationProp<
   RootStackParams,
@@ -16,14 +16,26 @@ type ProfileScreenNavigationProp = StackNavigationProp<
 
 const Resume = () => {
   const navigation = useNavigation<ProfileScreenNavigationProp>();
-  const [records, setRecords] = useState<TInsectRegister[]>([]);
+  const [records, setRecords] = useState<TInsect[]>([]);
+  const [insects, setInsects] = useState<TInsectRegister[]>([]);
+
+  const getTotalCount = (nameInsect: string) => {
+    const coincidences = insects.filter(insect => insect.name === nameInsect);
+    const iterator = 0;
+    const count = coincidences.reduce(
+      (accumulator, currentValue) => accumulator + currentValue.quantity,
+      iterator,
+    );
+    return count;
+  };
 
   const getRecords = async () => {
     try {
       const value = await AsyncStorage.getItem('user');
       if (value !== null) {
         const data: TRegister = JSON.parse(value);
-        setRecords(data.records);
+        setRecords(data.insects);
+        setInsects(data.records);
       }
     } catch (e) {
       console.warn('No se encontró información');
@@ -44,6 +56,7 @@ const Resume = () => {
             onPress={() => navigation.navigate('Reports')}>
             <ResumeCard
               insect={insect}
+              quantity={() => getTotalCount(insect.name)}
               key={index}
               lastItem={records.length - 1 === index}
             />
