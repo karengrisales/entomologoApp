@@ -10,7 +10,7 @@ export const styles = StyleSheet.create({
     marginBottom: 30,
   },
   location: {
-    marginTop: 70,
+    marginTop: 50,
   },
   text: {
     marginTop: 20,
