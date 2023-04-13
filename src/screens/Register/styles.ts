@@ -22,9 +22,9 @@ export const styles = StyleSheet.create({
   buttons: {
     justifyContent: 'space-between',
     flexDirection: 'row',
-    marginTop: 93,
+    marginTop: 44,
   },
   buttonError: {
-    marginTop: 30,
+    marginTop: 110,
   },
 });

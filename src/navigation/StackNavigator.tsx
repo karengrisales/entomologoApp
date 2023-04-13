@@ -9,7 +9,7 @@ import Count from '../screens/Count';
 import Records from '../screens/Records';
 import Reports from '../screens/Reports';
 import FormNewInsect from '../screens/FormNewInsect/index';
-import { TInsect } from '../types/types';
+import { TInsect, TInsectRegister } from '../types/types';
 import HeaderComponent from '../components/Header/indes';
 import { Platform } from 'react-native';
 
@@ -19,7 +19,11 @@ export type RootStackParams = {
   FormInsect: undefined;
   Count: TInsect;
   Records: undefined;
-  Reports: undefined;
+  Reports: {
+    insect: TInsect;
+    quantity: number;
+    insectRegister: TInsectRegister[];
+  };
   FormNewInsect: undefined;
 };
 

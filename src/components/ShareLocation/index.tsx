@@ -8,10 +8,14 @@ import { styles } from './styles';
 type TProps = {
   enabled: boolean;
   onToggle: React.Dispatch<React.SetStateAction<boolean>>;
+  setMessage: React.Dispatch<React.SetStateAction<boolean>>;
 };
 
-const ShareLocation = ({ enabled, onToggle }: TProps) => {
-  const toggleSwitch = () => onToggle(previousState => !previousState);
+const ShareLocation = ({ enabled, onToggle, setMessage }: TProps) => {
+  const toggleSwitch = () => {
+    onToggle(previousState => !previousState);
+    setMessage(false);
+  };
 
   return (
     <View style={styles.container}>
