@@ -60,13 +60,16 @@ const Register = () => {
   const [message, setMessage] = useState(false);
 
   const storeUser = async (value: TRegister) => {
-    try {
-      const jsonValue = JSON.stringify(value);
-      await AsyncStorage.setItem('user', jsonValue);
-      location && navigation.navigate('RegisterInsect');
+    if (location) {
+      try {
+        const jsonValue = JSON.stringify(value);
+        await AsyncStorage.setItem('user', jsonValue);
+        location && navigation.navigate('RegisterInsect');
+      } catch (e) {
+        console.warn('No se pudo almacenar la información');
+      }
+    } else {
       setMessage(true);
-    } catch (e) {
-      console.warn('No se pudo almacenar la información');
     }
   };
 
@@ -105,14 +108,18 @@ const Register = () => {
       </View>
       <Input value={name} onChangeInput={setName} label="Nombre" />
       <View style={styles.location}>
-        <ShareLocation enabled={location} onToggle={setLocation} />
-        {!location && message && (
+        <ShareLocation
+          enabled={location}
+          onToggle={setLocation}
+          setMessage={setMessage}
+        />
+        {message && (
           <Text style={styles.text}>
             Por favor comparte tu ubicación para continuar.
           </Text>
         )}
       </View>
-      <View style={[styles.buttons, !location && styles.buttonError]}>
+      <View style={[styles.buttons, !message && styles.buttonError]}>
         <Button
           name="Omitir"
           theme="secondaryButton"

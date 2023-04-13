@@ -1,4 +1,4 @@
-import { useNavigation } from '@react-navigation/native';
+import { RouteProp, useNavigation, useRoute } from '@react-navigation/native';
 import { StackNavigationProp } from '@react-navigation/stack';
 import React from 'react';
 import { Linking } from 'react-native';
@@ -16,11 +16,18 @@ type ProfileScreenNavigationProp = StackNavigationProp<
   'Reports'
 >;
 
+type ProfileScreenRouteProp = RouteProp<RootStackParams, 'Reports'>;
+
 const Reports = () => {
   const navigation = useNavigation<ProfileScreenNavigationProp>();
+  const { params } = useRoute<ProfileScreenRouteProp>();
   const { state } = useInsects();
   const handleNavigatorPress = () => {
-    Linking.openURL('https://www.google.com/');
+    Linking.openURL(
+      params.insect.url.includes('http')
+        ? params.insect.url
+        : `http://${params.insect.url}`,
+    );
   };
 
   return (
@@ -29,16 +36,16 @@ const Reports = () => {
         <View style={styles.containerCard}>
           <View style={styles.containerInformation}>
             <View style={styles.quantity}>
-              <Text style={styles.quantityText}>509</Text>
+              <Text style={styles.quantityText}>{params.quantity}</Text>
             </View>
             <View>
-              <Text style={styles.specie}>Hormiga</Text>
+              <Text style={styles.specie}>{params.insect.name}</Text>
               <Text style={styles.city}> 2 ciudades</Text>
               <Text style={styles.city}>00/00/0000 al 00/00/0000</Text>
             </View>
           </View>
           <View style={styles.image}>
-            <ImageComponent width={70} height={70} />
+            <ImageComponent width={70} height={70} uri={params.insect.image} />
           </View>
         </View>
         <View style={styles.map} />
@@ -56,7 +63,7 @@ const Reports = () => {
             />
           </View>
         </View>
-        {state.insects.map((insect, index) => (
+        {params.insectRegister.map((insect, index) => (
           <Card insect={insect} key={index} />
         ))}
       </ScrollView>

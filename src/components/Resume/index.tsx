@@ -29,11 +29,17 @@ const Resume = () => {
     return count;
   };
 
+  const getTotalInsects = (nameInsect: string) => {
+    const coincidences = insects.filter(insect => insect.name === nameInsect);
+    return coincidences;
+  };
+
   const getRecords = async () => {
     try {
       const value = await AsyncStorage.getItem('user');
       if (value !== null) {
         const data: TRegister = JSON.parse(value);
+        data.insects.pop();
         setRecords(data.insects);
         setInsects(data.records);
       }
@@ -53,7 +59,13 @@ const Resume = () => {
         {records.map((insect, index) => (
           <TouchableOpacity
             key={index}
-            onPress={() => navigation.navigate('Reports')}>
+            onPress={() =>
+              navigation.navigate('Reports', {
+                insect,
+                insectRegister: getTotalInsects(insect.name),
+                quantity: getTotalCount(insect.name),
+              })
+            }>
             <ResumeCard
               insect={insect}
               quantity={() => getTotalCount(insect.name)}
