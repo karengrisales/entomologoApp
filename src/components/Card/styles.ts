@@ -17,6 +17,11 @@ export const styles = StyleSheet.create({
     justifyContent: 'space-between',
     marginBottom: 15,
   },
+  containerCardDropdown: {
+    marginBottom: 0,
+    borderBottomLeftRadius: 0,
+    borderBottomRightRadius: 0,
+  },
   containerInformation: {
     flexDirection: 'row',
     padding: 15,
@@ -49,5 +54,30 @@ export const styles = StyleSheet.create({
   image: {
     paddingHorizontal: 20,
     paddingTop: 5,
+  },
+  containerDescription: {
+    backgroundColor: colors.primaryWhite,
+    borderBottomStartRadius: 12,
+    borderBottomEndRadius: 12,
+    padding: 20,
+    marginBottom: 20,
+  },
+  containerUrl: {
+    flexDirection: 'row',
+  },
+  buttons: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    position: 'absolute',
+    bottom: 40,
+    width: '100%',
+  },
+  insects: {
+    marginTop: 15,
+    marginBottom: 115,
+  },
+  map: {
+    height: 188,
+    backgroundColor: colors.secondaryGreen,
   },
 });
