@@ -4,6 +4,7 @@ import { TInsectRegister } from '../../types/types';
 import ImageComponent from '../Image';
 import { styles } from './styles';
 import Button from '../Button';
+import { useLocationReverse } from '../../hooks/useLocationReverse';
 
 type TProps = {
   insect: TInsectRegister;
@@ -13,6 +14,10 @@ type TProps = {
 
 const Card = ({ insect, dropdown, url }: TProps) => {
   const [isDropdown, setIsDropdown] = useState(false);
+  const { results } = useLocationReverse(
+    insect.location.coords.latitude,
+    insect.location.coords.longitude,
+  );
 
   const handleNavigatorPress = () => {
     url && Linking.openURL(url.includes('http') ? url : `http://${url}`);
@@ -36,7 +41,7 @@ const Card = ({ insect, dropdown, url }: TProps) => {
             <View>
               <Text style={styles.specie}>{insect.name}</Text>
               <Text style={styles.city}>
-                <Text style={styles.city}>{insect.location} </Text>
+                <Text style={styles.city}>{results[0]?.city} </Text>
                 {insect.date}
               </Text>
             </View>

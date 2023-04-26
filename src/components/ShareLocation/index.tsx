@@ -9,9 +9,10 @@ type TProps = {
   enabled: boolean;
   onToggle: React.Dispatch<React.SetStateAction<boolean>>;
   setMessage: React.Dispatch<React.SetStateAction<boolean>>;
+  disabled?: boolean;
 };
 
-const ShareLocation = ({ enabled, onToggle, setMessage }: TProps) => {
+const ShareLocation = ({ enabled, onToggle, setMessage, disabled }: TProps) => {
   const toggleSwitch = () => {
     onToggle(previousState => !previousState);
     setMessage(false);
@@ -20,6 +21,7 @@ const ShareLocation = ({ enabled, onToggle, setMessage }: TProps) => {
   return (
     <View style={styles.container}>
       <ToggleSwitch
+        disabled={disabled}
         isOn={enabled}
         onToggle={toggleSwitch}
         size="medium"

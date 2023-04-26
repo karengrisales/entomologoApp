@@ -1,3 +1,5 @@
+import { GeoPosition } from 'react-native-geolocation-service';
+
 export type TRegister = {
   name: string;
   photo: string;
@@ -14,7 +16,7 @@ export type TInsect = {
 
 export type TInsectRegister = {
   name: string;
-  location: string;
+  location: GeoPosition;
   quantity: number;
   observation?: string;
   habitat?: string;

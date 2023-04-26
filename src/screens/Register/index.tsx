@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react';
-import { Text, View } from 'react-native';
+import React, { useEffect, useState, useRef } from 'react';
+import { PermissionsAndroid, Platform, Text, View } from 'react-native';
 import Input from '../../components/Input';
 import ShareLocation from '../../components/ShareLocation';
 import { useIsFocused, useNavigation } from '@react-navigation/native';
@@ -17,6 +17,7 @@ import {
   launchImageLibrary,
 } from 'react-native-image-picker';
 import { images } from '../../assets';
+import Geolocation from 'react-native-geolocation-service';
 
 type ProfileScreenNavigationProp = StackNavigationProp<
   RootStackParams,
@@ -58,6 +59,28 @@ const Register = () => {
   const [name, setName] = useState('');
   const [location, setLocation] = useState(false);
   const [message, setMessage] = useState(false);
+  const [disabledToggle, setDisabledToggle] = useState(false);
+  const firstRender = useRef(false);
+
+  const requestLocationPermission = async () => {
+    if (Platform.OS === 'ios') {
+      Geolocation.requestAuthorization('whenInUse');
+    } else if (Platform.OS === 'android') {
+      try {
+        const granted = await PermissionsAndroid.request(
+          PermissionsAndroid.PERMISSIONS.ACCESS_FINE_LOCATION,
+        );
+        if (granted === PermissionsAndroid.RESULTS.GRANTED) {
+          return true;
+        } else {
+          return false;
+        }
+      } catch (err) {
+        console.error(err);
+        return false;
+      }
+    }
+  };
 
   const storeUser = async (value: TRegister) => {
     if (location) {
@@ -92,6 +115,19 @@ const Register = () => {
   const uri = pickerResponse?.assets && pickerResponse.assets[0].uri;
 
   useEffect(() => {
+    if (firstRender.current && location) {
+      requestLocationPermission().then(data => {
+        if (!data) {
+          setLocation(false);
+        }
+        setDisabledToggle(true);
+      });
+    } else {
+      firstRender.current = true;
+    }
+  }, [location]);
+
+  useEffect(() => {
     SplashScreen.hide();
     getUser();
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -109,6 +145,7 @@ const Register = () => {
       <Input value={name} onChangeInput={setName} label="Nombre" />
       <View style={styles.location}>
         <ShareLocation
+          disabled={disabledToggle}
           enabled={location}
           onToggle={setLocation}
           setMessage={setMessage}
